@@ -1,0 +1,215 @@
+🎯 Objectif du site
+
+Créer un site web vitrine simple, fun et professionnel pour SoiréeXpress, le service de livraison de produits de soirée (alcool, snacks, accessoires, etc.) de 1h30 à 5h du matin, dans le secteur de Lorient et alentours.
+➡️ Pas de commande en ligne : les commandes se font uniquement par message ou appel.
+
+🎨 Identité visuelle
+
+Couleurs principales :
+
+🧡 Orange vif (#E84C3D)
+
+🤍 Beige clair (#FBEEDC)
+
+⚫ Optionnel : noir doux (#1C1C1C) pour le texte
+
+Typo : Poppins / Montserrat / Nunito
+
+Style : clean, chaleureux, esprit “bonne franquette pro”
+
+Ambiance visuelle : fond orange, icônes beige clair, photos ambiance “soirée chill” (pas boîte de nuit)
+
+🧱 Structure du site
+🏠 Page d’accueil
+🧃 Hero section
+
+Logo SoiréeXpress (ton logo orange/beige)
+
+Slogan :
+
+“La soirée n’est jamais finie — SoiréeXpress te livre entre 1h30 et 5h du matin 🍾”
+
+Bouton principal : “Commander maintenant” → ancre vers la section "Commander"
+
+Fond : orange avec léger dégradé ou halo beige clair
+
+🚚 Section “Comment ça marche”
+
+1️⃣ Choisis tes produits
+
+Parcours notre catalogue plus bas 👇
+2️⃣ Envoie un message au 07 66 45 82 05 📱
+Commande par SMS, WhatsApp ou appel
+3️⃣ Livraison rapide sur place 💳
+Paiement en espèces ou carte
+4️⃣ Profite de ta soirée 🎉
+
+🕒 Infos pratiques
+
+📦 Minimum de commande : 30 €
+🕐 Horaires : 1h30 à 5h du matin
+🚗 Zone : Lorient et alentours (voir carte ci-dessous)
+💳 Paiement sur place : espèces ou CB
+
+🗺️ Carte de la zone de livraison
+
+Afficher une carte interactive (Google Maps ou Mapbox) avec un cercle transparent englobant les villes desservies.
+
+Exigences pour la carte :
+
+Cercle centré sur Lorient
+
+Rayon couvrant :
+
+Lorient
+
+Lanester
+
+Quéven
+
+Pont-Scorff
+
+Rédené
+
+Guidel / Guidel-Plages
+
+Larmor-Plage
+
+Moëlan-sur-Mer
+
+Quimperlé
+
+Rayon approximatif : 25 km autour de Lorient
+
+Couleur du cercle : orange transparent (#E84C3D, opacité 0.2)
+
+Bord du cercle : beige clair
+
+Légende :
+
+“Zone SoiréeXpress – livraison entre 1h30 et 5h (minimum 30 €)”
+
+🍾 Catalogue produits
+
+Sur fond beige clair, par catégories avec icônes ou photos de produits.
+
+🥃 Alcool
+
+Desperados 33cl – 4 €
+
+Pack Desperados 12x33cl – 35 €
+
+La Chouffe 33cl – 7 €
+
+Vodka Poliakoff 70cl – 35 €
+
+Rhum brun – 39 €
+
+Rhum blanc Havana Club – 38 €
+
+Whisky Clan Campbell – 40 €
+
+Ricard – 38 €
+
+🧃 Softs
+
+Coca 1L – 5 €
+
+Fanta 1L – 5 €
+
+Limonade Plancoët 1.5L – 5 €
+
+Orangina 1L – 5 €
+
+Eau Cristaline 1L – 2 €
+
+Red Bull – 5 €
+
+Boisson énergisante – 5 €
+
+🍟 Snacks
+
+Chips Breizh 125g – 5 €
+
+🎉 Accessoires & Fun
+
+Préservatif x1 – 3 €
+
+Préservatifs x12 – 15 €
+
+Briquet – 5 €
+
+Jeu de cartes – 7 €
+
+Lunettes – 5 €
+
+T-shirt SoiréeXpress – 10 €
+
+💬 Section “Commander”
+📞 Commande uniquement par message
+
+👉 07 66 45 82 05
+
+Commande possible par SMS, WhatsApp ou appel direct
+
+Paiement sur place (espèces ou CB)
+
+Minimum de commande : 30 €
+
+Livraison de 1h30 à 5h
+
+Zone couverte : voir carte ci-dessus
+
+📝 Exemple de message à envoyer :
+
+Salut SoiréeXpress 👋
+
+Nom : Thomas
+
+Adresse : 14 rue du Stade, Guidel
+
+Commande : 1 pack Despe + 1 Chips Breizh + 1 Briquet
+
+Heure souhaitée : 2h15
+
+Paiement : Carte
+
+Merci les gars 🍻
+
+💬 Bouton CTA (sur fond orange clair) :
+
+“📩 Envoyer mon message”
+→ lien cliquable vers WhatsApp pré-rempli :
+
+https://wa.me/33766458205?text=Salut%20Soir%C3%A9eXpress%20!%20Je%20veux%20commander%20...
+
+⚖️ Règlement SoiréeXpress
+
+Service réservé aux personnes majeures (18+).
+
+Livraison uniquement de 1h30 à 5h, dans la zone couverte.
+
+Minimum de commande : 30 € TTC.
+
+Paiement sur place (espèces ou CB).
+
+SoiréeXpress se réserve le droit de refuser une commande (comportement inapproprié, zone hors périmètre, ou abus d’alcool).
+
+Aucun remboursement après livraison.
+
+Le client reste responsable de sa consommation d’alcool.
+
+SoiréeXpress décline toute responsabilité en cas d’usage inapproprié des produits livrés.
+
+En commandant, le client accepte ces conditions.
+
+📱 Bas de page
+
+Logo + phrase :
+
+“SoiréeXpress — le plan B préféré des fêtards 🍾”
+
+Liens : Accueil / Catalogue / Commander / Règlement
+Icônes réseaux sociaux : Instagram @soireexpress
+
+Copyright © 2025 SoiréeXpress
