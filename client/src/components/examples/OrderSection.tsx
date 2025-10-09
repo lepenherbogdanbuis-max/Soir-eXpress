@@ -1,0 +1,5 @@
+import OrderSection from '../OrderSection';
+
+export default function OrderSectionExample() {
+  return <OrderSection />;
+}
