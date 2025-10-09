@@ -13,8 +13,11 @@ export default function Footer() {
             <h3 className="font-heading font-bold text-2xl text-[hsl(30,70%,93%)] mb-2" data-testid="text-footer-logo">
               SoiréeXpress
             </h3>
-            <p className="text-[hsl(30,70%,93%)]/80 text-sm" data-testid="text-footer-tagline">
+            <p className="text-[hsl(30,70%,93%)]/80 text-sm mb-3" data-testid="text-footer-tagline">
               Le plan B préféré des fêtards 🍾
+            </p>
+            <p className="text-[hsl(30,70%,93%)]/70 text-xs" data-testid="text-footer-feedback">
+              N'hésitez pas à faire votre retour sur Insta et à nous envoyer des messages pour votre retour ou idées
             </p>
           </div>
           

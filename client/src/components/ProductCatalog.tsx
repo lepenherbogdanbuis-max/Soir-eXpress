@@ -8,10 +8,11 @@ const products = {
     { name: "Pack Desperados 12x33cl", price: "35 €" },
     { name: "La Chouffe 33cl", price: "7 €" },
     { name: "Vodka Poliakoff 70cl", price: "35 €" },
-    { name: "Rhum brun", price: "39 €" },
-    { name: "Rhum blanc Havana Club", price: "38 €" },
-    { name: "Whisky Clan Campbell", price: "40 €" },
-    { name: "Ricard", price: "38 €" },
+    { name: "Rhum brun Havana Club 70cl", price: "39 €" },
+    { name: "Rhum blanc Havana Club 70cl", price: "38 €" },
+    { name: "Whisky Clan Campbell 70cl", price: "40 €" },
+    { name: "Ricard 70cl", price: "38 €" },
+    { name: "GET 27 70cl", price: "40 €" },
   ],
   softs: [
     { name: "Coca 1L", price: "5 €" },
@@ -24,6 +25,9 @@ const products = {
   ],
   snacks: [
     { name: "Chips Breizh 125g", price: "5 €" },
+    { name: "Pringles", price: "5 €" },
+    { name: "Curly", price: "5 €" },
+    { name: "Monster Munch", price: "5 €" },
   ],
   accessoires: [
     { name: "Préservatif x1", price: "3 €" },

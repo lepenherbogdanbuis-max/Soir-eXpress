@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   const scrollToOrder = () => {
-    document.getElementById('commander')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('catalogue')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
