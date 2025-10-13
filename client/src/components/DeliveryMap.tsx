@@ -92,12 +92,6 @@ export default function DeliveryMap() {
             </p>
           </Card>
         </div>
-
-        <div className="bg-[hsl(30,70%,93%)] p-6 rounded-lg border-l-4 border-primary max-w-2xl mx-auto mt-8">
-          <p className="text-center text-foreground font-medium" data-testid="text-map-legend">
-            Zone SoiréeXpress – livraison entre 1h30 et 5h (minimum 30 €)
-          </p>
-        </div>
       </div>
     </section>
   );
