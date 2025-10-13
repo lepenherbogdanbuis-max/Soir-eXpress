@@ -37,6 +37,9 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  log('Starting server initialization...');
+  log(`Environment: ${app.get("env")}`);
+  
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -61,6 +64,17 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
+  
+  server.on('error', (err: NodeJS.ErrnoException) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`Port ${port} is already in use`);
+      process.exit(1);
+    } else {
+      console.error('Server error:', err);
+      process.exit(1);
+    }
+  });
+
   server.listen({
     port,
     host: "0.0.0.0",
@@ -68,4 +82,7 @@ app.use((req, res, next) => {
   }, () => {
     log(`serving on port ${port}`);
   });
-})();
+})().catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
+});
