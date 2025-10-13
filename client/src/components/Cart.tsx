@@ -14,11 +14,11 @@ import { Badge } from "@/components/ui/badge";
 import Checkout from "@/components/Checkout";
 
 export default function Cart() {
-  const { items, total, itemCount, updateQuantity, removeItem } = useCart();
+  const { items, total, itemCount, updateQuantity, removeItem, isCartOpen, setIsCartOpen } = useCart();
   const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   return (
-    <Sheet>
+    <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="relative" data-testid="button-open-cart">
           <ShoppingCart className="w-5 h-5" />

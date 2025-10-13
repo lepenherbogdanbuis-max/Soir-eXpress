@@ -7,6 +7,8 @@ interface CartContextType {
   items: CartItem[];
   total: number;
   itemCount: number;
+  isCartOpen: boolean;
+  setIsCartOpen: (open: boolean) => void;
   addItem: (item: Omit<CartItem, "quantity"> & { quantity?: number }) => void;
   removeItem: (itemId: string, variant?: string) => void;
   updateQuantity: (itemId: string, quantity: number, variant?: string) => void;
@@ -23,6 +25,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
     return [];
   });
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -95,6 +98,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         items,
         total,
         itemCount,
+        isCartOpen,
+        setIsCartOpen,
         addItem,
         removeItem,
         updateQuantity,

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreditCard, Banknote, MapPin, Send, CheckCircle } from "lucide-react";
+import { CreditCard, Banknote, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -35,72 +35,8 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
   const { toast } = useToast();
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("cash");
   const [address, setAddress] = useState("");
-  const [addressVerified, setAddressVerified] = useState(false);
-  const [isVerifying, setIsVerifying] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [orderSent, setOrderSent] = useState(false);
-
-  const verifyAddress = async () => {
-    if (!address.trim()) {
-      toast({
-        title: "Adresse requise",
-        description: "Veuillez entrer une adresse de livraison",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsVerifying(true);
-    
-    try {
-      const google = (window as any).google;
-      const geocoder = new google.maps.Geocoder();
-      
-      // @ts-ignore - Google Maps types
-      const result = await new Promise<any[]>((resolve, reject) => {
-        // @ts-ignore - Google Maps types
-        geocoder.geocode({ address }, (results: any[], status: string) => {
-          if (status === "OK" && results) {
-            resolve(results);
-          } else {
-            reject(new Error("Adresse non trouvée"));
-          }
-        });
-      });
-
-      const location = result[0].geometry.location;
-      const lorientCenter = { lat: 47.7482, lng: -3.3667 };
-      
-      const distance = google.maps.geometry.spherical.computeDistanceBetween(
-        new google.maps.LatLng(lorientCenter.lat, lorientCenter.lng),
-        location
-      );
-
-      if (distance > 25000) {
-        toast({
-          title: "Hors zone de livraison",
-          description: "Cette adresse est en dehors de notre zone de livraison (25km autour de Lorient)",
-          variant: "destructive",
-        });
-        setAddressVerified(false);
-      } else {
-        setAddressVerified(true);
-        toast({
-          title: "✅ Adresse vérifiée",
-          description: `Adresse valide et dans notre zone de livraison (${(distance / 1000).toFixed(1)}km de Lorient)`,
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Erreur de vérification",
-        description: "Impossible de vérifier l'adresse. Veuillez réessayer.",
-        variant: "destructive",
-      });
-      setAddressVerified(false);
-    } finally {
-      setIsVerifying(false);
-    }
-  };
 
   const generateWhatsAppMessage = () => {
     let message = "🛒 *Nouvelle commande SoiréeXpress*\n\n";
@@ -119,10 +55,10 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
   };
 
   const handleSendOrder = () => {
-    if (!addressVerified) {
+    if (!address.trim()) {
       toast({
-        title: "Adresse non vérifiée",
-        description: "Veuillez vérifier votre adresse avant de commander",
+        title: "Adresse requise",
+        description: "Veuillez entrer une adresse de livraison",
         variant: "destructive",
       });
       return;
@@ -146,7 +82,6 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
       setOrderSent(false);
       onOpenChange(false);
       setAddress("");
-      setAddressVerified(false);
       setPaymentMethod("cash");
     }, 5000);
   };
@@ -224,42 +159,20 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
                 <Label htmlFor="address" className="text-base font-semibold">
                   Adresse de livraison
                 </Label>
-                <div className="space-y-2">
-                  <div className="flex gap-2">
-                    <Input
-                      id="address"
-                      placeholder="Ex: 5 Rue du Port, 56100 Lorient"
-                      value={address}
-                      onChange={(e) => {
-                        setAddress(e.target.value);
-                        setAddressVerified(false);
-                      }}
-                      data-testid="input-address"
-                    />
-                    <Button
-                      variant="outline"
-                      onClick={verifyAddress}
-                      disabled={isVerifying || !address.trim()}
-                      data-testid="button-verify-address"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      {isVerifying ? "Vérification..." : "Vérifier"}
-                    </Button>
-                  </div>
-                  {addressVerified && (
-                    <p className="text-sm text-green-600 flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4" />
-                      Adresse vérifiée et dans la zone de livraison
-                    </p>
-                  )}
-                </div>
+                <Input
+                  id="address"
+                  placeholder="Ex: 5 Rue du Port, 56100 Lorient"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  data-testid="input-address"
+                />
               </div>
 
               <Button
                 className="w-full"
                 size="lg"
                 onClick={handleSendOrder}
-                disabled={!addressVerified}
+                disabled={!address.trim()}
                 data-testid="button-send-whatsapp"
               >
                 <Send className="w-4 h-4 mr-2" />

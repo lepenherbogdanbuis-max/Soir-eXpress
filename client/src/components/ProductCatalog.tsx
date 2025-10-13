@@ -94,7 +94,7 @@ const categories = [
 function ProductCard({ product, index, categoryId }: { product: any, index: number, categoryId: string }) {
   const [currentVariant, setCurrentVariant] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const { addItem } = useCart();
+  const { addItem, setIsCartOpen } = useCart();
   const { toast } = useToast();
   
   const parsePrice = (priceStr: string): number => {
@@ -117,6 +117,11 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
     toast({
       title: "✅ Ajouté au panier",
       description: `${quantity}x ${product.name}${variant ? ` (${variant.name})` : ""} - ${(price * quantity).toFixed(2)} €`,
+      action: {
+        altText: "Voir le panier",
+        label: "Voir le panier",
+        onClick: () => setIsCartOpen(true),
+      },
     });
     
     setQuantity(1);
