@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Sparkles, Wine, Coffee, Pizza } from "lucide-react";
 
 export default function HeroSection() {
   const scrollToOrder = () => {
@@ -8,6 +9,16 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-primary relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial from-[hsl(30,70%,93%)]/20 via-transparent to-transparent opacity-50"></div>
+      
+      {/* Decorative floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Sparkles className="absolute top-20 left-[10%] w-8 h-8 text-primary-foreground/20 animate-pulse" />
+        <Sparkles className="absolute top-40 right-[15%] w-6 h-6 text-primary-foreground/15 animate-pulse delay-75" />
+        <Wine className="absolute bottom-32 left-[20%] w-10 h-10 text-primary-foreground/10 animate-pulse delay-150" />
+        <Coffee className="absolute top-[60%] right-[25%] w-8 h-8 text-primary-foreground/15 animate-pulse delay-300" />
+        <Pizza className="absolute bottom-48 right-[10%] w-9 h-9 text-primary-foreground/10 animate-pulse delay-500" />
+        <Sparkles className="absolute top-[30%] left-[5%] w-5 h-5 text-primary-foreground/20 animate-pulse delay-700" />
+      </div>
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="mb-8">

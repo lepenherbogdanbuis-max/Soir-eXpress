@@ -265,6 +265,26 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
+  /* Animation delays for decorative elements */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+  
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+  
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .delay-700 {
+    animation-delay: 700ms;
+  }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
