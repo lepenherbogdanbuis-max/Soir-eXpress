@@ -1,16 +1,33 @@
-import { useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import type { CartItem } from "@/../../shared/schema";
 
 const CART_STORAGE_KEY = "soireexpress_cart";
 
-export function useCart() {
+interface CartContextType {
+  items: CartItem[];
+  total: number;
+  itemCount: number;
+  addItem: (item: Omit<CartItem, "quantity"> & { quantity?: number }) => void;
+  removeItem: (itemId: string, variant?: string) => void;
+  updateQuantity: (itemId: string, quantity: number, variant?: string) => void;
+  clearCart: () => void;
+}
+
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
-    const stored = localStorage.getItem(CART_STORAGE_KEY);
-    return stored ? JSON.parse(stored) : [];
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem(CART_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    }
+    return [];
   });
 
   useEffect(() => {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    if (typeof window !== "undefined") {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    }
   }, [items]);
 
   const addItem = (item: Omit<CartItem, "quantity"> & { quantity?: number }) => {
@@ -72,13 +89,27 @@ export function useCart() {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
-  return {
-    items,
-    total,
-    itemCount,
-    addItem,
-    removeItem,
-    updateQuantity,
-    clearCart,
-  };
+  return (
+    <CartContext.Provider
+      value={{
+        items,
+        total,
+        itemCount,
+        addItem,
+        removeItem,
+        updateQuantity,
+        clearCart,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+export function useCart() {
+  const context = useContext(CartContext);
+  if (context === undefined) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
 }

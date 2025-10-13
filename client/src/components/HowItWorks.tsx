@@ -5,20 +5,20 @@ const steps = [
   {
     number: 1,
     icon: ShoppingCart,
-    title: "Choisis tes produits",
-    description: "Parcours notre catalogue plus bas 👇",
+    title: "Ajoute tes produits au panier",
+    description: "Parcours notre catalogue et sélectionne tes quantités 👇",
   },
   {
     number: 2,
     icon: Smartphone,
-    title: "Envoie un message au 07 66 45 82 05",
-    description: "Commande par SMS, WhatsApp ou appel. La commande sera validée dès que notre livreur vous contactera par WhatsApp ou par appel.",
+    title: "Valide ta commande sur WhatsApp",
+    description: "Choisis ton mode de paiement, vérifie ton adresse, et envoie ta commande par WhatsApp",
   },
   {
     number: 3,
     icon: Truck,
     title: "Livraison rapide sur place",
-    description: "Paiement en espèces ou carte",
+    description: "Paiement à la livraison (espèces ou carte)",
   },
   {
     number: 4,

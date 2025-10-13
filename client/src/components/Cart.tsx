@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useCart } from "@/hooks/use-cart";
+import { useCart } from "@/contexts/CartContext";
 import { Badge } from "@/components/ui/badge";
 import Checkout from "@/components/Checkout";
 
