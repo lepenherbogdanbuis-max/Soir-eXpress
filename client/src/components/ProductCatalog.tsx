@@ -11,14 +11,18 @@ import whiteRumImg from "@assets/Havana Blanc 70cl_1760319800254.png";
 import whiskyImg from "@assets/clan campbell 70cl_1760319800254.png";
 import ricardImg from "@assets/Ricard 70cl_1760319800255.png";
 import get27Img from "@assets/jet 27 70cl_1760319800255.png";
-import cokaImg from "@assets/stock_images/coca_cola_bottle_1_l_849d9d46.jpg";
-import fantaImg from "@assets/stock_images/fanta_orange_bottle_d6e58e6c.jpg";
-import lemonadeImg from "@assets/stock_images/lemonade_bottle_51e58895.jpg";
-import oranginaImg from "@assets/stock_images/orangina_bottle_65fde9e7.jpg";
-import waterImg from "@assets/stock_images/water_bottle_c874f6a6.jpg";
-import redBullImg from "@assets/stock_images/red_bull_energy_drin_c2982ccc.jpg";
-import energyDrinkImg from "@assets/stock_images/energy_drink_can_38c16f50.jpg";
-import chipsImg from "@assets/stock_images/potato_chips_bag_6617a6b6.jpg";
+import cokaImg from "@assets/Coca 1L_1760327215987.png";
+import fantaImg from "@assets/Fanta 1L_1760327215987.png";
+import lemonadeImg from "@assets/Limonade 1L_1760327215989.png";
+import oranginaImg from "@assets/Orangina 1l_1760327215989.png";
+import waterImg from "@assets/cristaline 1l_1760327215989.png";
+import redBullImg from "@assets/ChatGPT Image 13 oct. 2025, 05_35_51_1760327215988.png";
+import redBullJuneberryImg from "@assets/Red Bull juneberry_1760327215988.png";
+import redBullPastèqueImg from "@assets/RedBull pasteque_1760327215988.png";
+import redBullPêcheImg from "@assets/RedBull peche blanche_1760327215989.png";
+import redBullPommeImg from "@assets/Red bull Pomme fuidji & Gingembre_1760327215989.png";
+import megaForceImg from "@assets/Boisson énergisante 1L_1760327215988.png";
+import chipsImg from "@assets/Chips Breizh_1760327215987.png";
 import pringlesImg from "@assets/stock_images/pringles_chips_can_68ec4378.jpg";
 import curlyImg from "@assets/stock_images/curly_snacks_bag_97acb948.jpg";
 import monsterMunchImg from "@assets/stock_images/monster_munch_crisps_db31ed8e.jpg";
@@ -46,8 +50,12 @@ const products = {
     { name: "Limonade Plancoët 1.5L", price: "5 €", image: lemonadeImg },
     { name: "Orangina 1L", price: "5 €", image: oranginaImg },
     { name: "Eau Cristaline 1L", price: "2 €", image: waterImg },
-    { name: "Red Bull", price: "5 €", image: redBullImg },
-    { name: "Boisson énergisante", price: "5 €", image: energyDrinkImg },
+    { name: "Red Bull Original", price: "5 €", image: redBullImg },
+    { name: "Red Bull Juneberry", price: "5 €", image: redBullJuneberryImg },
+    { name: "Red Bull Pastèque", price: "5 €", image: redBullPastèqueImg },
+    { name: "Red Bull Pêche Blanche", price: "5 €", image: redBullPêcheImg },
+    { name: "Red Bull Pomme Fuji & Gingembre", price: "5 €", image: redBullPommeImg },
+    { name: "Mega Force 1L", price: "8 €", image: megaForceImg },
   ],
   snacks: [
     { name: "Chips Breizh 125g", price: "5 €", image: chipsImg },

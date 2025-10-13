@@ -1,89 +1,134 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SiInstagram, SiFacebook } from "react-icons/si";
 
 const cocktails = [
   {
     name: "Mojito Classique",
+    subtitle: "Le roi des apéros",
     ingredients: [
-      "5 cl de Rhum blanc Havana Club",
-      "2 cl de jus de citron vert",
-      "6 feuilles de menthe fraîche",
-      "2 cuillères à café de sucre",
+      "5 cl de rhum blanc",
+      "1/2 citron vert coupé en 4 morceaux",
+      "2 c. à café de sucre de canne",
+      "8 feuilles de menthe fraîche",
       "Eau gazeuse",
       "Glaçons"
     ],
-    preparation: "Écrasez la menthe avec le sucre et le citron vert au fond d'un verre. Ajoutez le rhum et les glaçons. Complétez avec de l'eau gazeuse et mélangez délicatement."
+    preparation: "Mets les morceaux de citron vert et le sucre dans le verre. Écrase doucement avec un pilon pour faire sortir le jus (pas besoin de tout broyer). Claque les feuilles de menthe entre tes mains pour libérer l'arôme sans les abîmer, puis ajoute-les. Ajoute les glaçons, puis verse le rhum. Complète avec de l'eau gazeuse et mélange doucement.",
+    tip: "Frais, équilibré, et surtout pas amer. Le vrai goût du Mojito !"
   },
   {
-    name: "Cuba Libre",
+    name: "Sex on the Beach",
+    subtitle: "Le classique ambiance plage",
     ingredients: [
-      "5 cl de Rhum blanc Havana Club",
-      "12 cl de Coca Cola",
-      "1/2 citron vert",
+      "4 cl de vodka",
+      "2 cl de liqueur de pêche",
+      "4 cl de jus d'orange",
+      "4 cl de jus de cranberry",
       "Glaçons"
     ],
-    preparation: "Remplissez un verre de glaçons, ajoutez le rhum, pressez le demi-citron vert et complétez avec du Coca. Mélangez et décorez avec une rondelle de citron."
+    preparation: "Mets tout dans un shaker (ou une bouteille que tu fermes bien). Secoue 10 secondes et verse dans un grand verre rempli de glaçons.",
+    tip: "Doux, fruité, parfait pour démarrer la soirée sans se casser la tête."
   },
   {
-    name: "Desperados Sunrise",
+    name: "Caïpirinha",
+    subtitle: "L'énergie du Brésil",
     ingredients: [
-      "1 Desperados 33cl",
-      "3 cl de jus d'orange",
+      "5 cl de cachaça (ou rhum blanc si t'en as pas)",
+      "1 citron vert",
+      "2 c. à café de sucre de canne",
+      "Glaçons"
+    ],
+    preparation: "Coupe le citron en morceaux dans le verre, ajoute le sucre. Pile doucement pour extraire le jus. Ajoute la cachaça et remplis de glaçons. Mélange bien.",
+    tip: "Simple, fort, sucré, parfait pour les soirées qui bougent."
+  },
+  {
+    name: "Piña Colada Maison",
+    subtitle: "Version tropicale facile",
+    ingredients: [
+      "4 cl de rhum blanc",
+      "6 cl de jus d'ananas",
+      "4 cl de lait de coco",
+      "Glaçons"
+    ],
+    preparation: "Mets tout dans un shaker (ou un grand pot avec couvercle). Secoue bien 15 secondes. Verse sur des glaçons.",
+    tip: "Goût vacances garanti, même sous la pluie."
+  },
+  {
+    name: "Blue Lagoon",
+    subtitle: "Le bleu de la fête",
+    ingredients: [
+      "4 cl de vodka",
+      "2 cl de curaçao bleu",
+      "10 cl de limonade",
+      "Glaçons"
+    ],
+    preparation: "Mets la vodka et le curaçao dans le verre. Ajoute les glaçons puis la limonade. Mélange doucement.",
+    tip: "Look stylé, goût frais, et effet 'wow' garanti."
+  },
+  {
+    name: "Tequila Sunrise",
+    subtitle: "Simple et photogénique",
+    ingredients: [
+      "4 cl de tequila",
+      "8 cl de jus d'orange",
       "1 cl de grenadine",
       "Glaçons"
     ],
-    preparation: "Dans un grand verre avec des glaçons, versez la Desperados et le jus d'orange. Ajoutez délicatement la grenadine qui va descendre au fond pour créer l'effet sunrise."
+    preparation: "Verse la tequila et le jus d'orange dans le verre avec les glaçons. Verse lentement la grenadine pour créer le dégradé.",
+    tip: "Pas besoin de shaker, juste un peu de patience et un beau verre."
   },
   {
-    name: "Whisky Coca",
+    name: "Gin Tonic Fraise & Citron",
+    subtitle: "Chic et rafraîchissant",
     ingredients: [
-      "4 cl de Whisky Clan Campbell",
-      "12 cl de Coca Cola",
-      "Glaçons",
-      "1 tranche de citron (optionnel)"
-    ],
-    preparation: "Remplissez un verre de glaçons, versez le whisky puis le Coca. Mélangez doucement et ajoutez une tranche de citron si désiré."
-  },
-  {
-    name: "Vodka Energy",
-    ingredients: [
-      "4 cl de Vodka Poliakoff",
-      "1 Red Bull",
-      "Glaçons",
-      "1 quartier de citron vert"
-    ],
-    preparation: "Dans un verre rempli de glaçons, versez la vodka puis le Red Bull. Pressez légèrement le quartier de citron vert et ajoutez-le dans le verre."
-  },
-  {
-    name: "Get 27 Tonic",
-    ingredients: [
-      "4 cl de GET 27",
-      "12 cl de Limonade Plancoët",
-      "Glaçons",
-      "Feuilles de menthe fraîche"
-    ],
-    preparation: "Remplissez un verre de glaçons, ajoutez le GET 27 et complétez avec la limonade. Décorez avec quelques feuilles de menthe fraîche."
-  },
-  {
-    name: "Pastis Vitaminé",
-    ingredients: [
-      "2 cl de Ricard",
-      "1 cl de sirop de menthe",
-      "Eau fraîche",
+      "5 cl de gin",
+      "10 cl de tonic",
+      "2 fraises fraîches coupées",
+      "2 rondelles de citron",
       "Glaçons"
     ],
-    preparation: "Dans un verre, versez le Ricard et le sirop de menthe. Ajoutez des glaçons et complétez avec de l'eau fraîche selon votre goût."
+    preparation: "Mets le gin dans un grand verre ballon. Ajoute les fruits, les glaçons et le tonic.",
+    tip: "Un classique revisité, super frais et très léger."
   },
   {
-    name: "Rhum Ambré Cola",
+    name: "Malibu Sunrise",
+    subtitle: "Douceur tropicale",
     ingredients: [
-      "5 cl de Rhum Ambré Havana Club",
-      "12 cl de Coca Cola",
-      "1 quartier de citron vert",
+      "4 cl de Malibu",
+      "8 cl de jus d'ananas",
+      "2 cl de grenadine",
       "Glaçons"
     ],
-    preparation: "Remplissez un verre de glaçons, versez le rhum ambré puis le Coca. Pressez le quartier de citron vert au-dessus et mélangez."
+    preparation: "Verse le Malibu et le jus d'ananas dans le verre. Ajoute les glaçons puis la grenadine lentement pour le dégradé.",
+    tip: "Goût coco-ananas + look coloré = combo parfait."
+  },
+  {
+    name: "Rhum Pomme Cannelle",
+    subtitle: "Idéal pour l'hiver",
+    ingredients: [
+      "5 cl de rhum ambré",
+      "10 cl de jus de pomme",
+      "1 pincée de cannelle",
+      "Glaçons"
+    ],
+    preparation: "Verse le rhum et le jus de pomme dans le verre. Ajoute la cannelle et les glaçons.",
+    tip: "Simple, chaud en goût, parfait pour les soirées plus calmes."
+  },
+  {
+    name: "Virgin Mojito",
+    subtitle: "Sans alcool, mais full ambiance",
+    ingredients: [
+      "1/2 citron vert",
+      "2 c. à café de sucre de canne",
+      "8 feuilles de menthe fraîche",
+      "Eau gazeuse",
+      "Glaçons"
+    ],
+    preparation: "Mets le citron et le sucre dans le verre et pile doucement. Claque la menthe entre tes mains, ajoute-la. Mets les glaçons puis verse l'eau gazeuse.",
+    tip: "Même sans rhum, ça reste frais et festif."
   }
 ];
 
@@ -98,10 +143,58 @@ export default function About() {
             Idées de Cocktails à Faire à la Maison
           </h1>
           
-          <p className="text-center text-lg text-muted-foreground mb-16 max-w-3xl mx-auto">
+          <p className="text-center text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
             Découvrez nos recettes de cocktails simples et délicieux à réaliser chez vous avec les produits disponibles sur SoiréeXpress.
             Parfait pour impressionner vos invités ou profiter d'une soirée réussie !
           </p>
+
+          <Card className="p-6 mb-16 bg-primary/5 border-primary/20">
+            <div className="text-center">
+              <h3 className="font-heading font-bold text-2xl mb-4 text-foreground">
+                📱 Suivez-nous sur les réseaux !
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                On publie régulièrement de nouvelles recettes de cocktails, astuces de mixologie et contenus exclusifs sur Instagram et Facebook.
+                Abonnez-vous pour ne rien rater !
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button 
+                  asChild
+                  variant="default"
+                  size="lg"
+                  className="gap-2"
+                  data-testid="button-instagram-follow"
+                >
+                  <a 
+                    href="https://www.instagram.com/soireexpress" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <SiInstagram className="w-5 h-5" />
+                    Suivre sur Instagram
+                  </a>
+                </Button>
+                
+                <Button 
+                  asChild
+                  variant="default"
+                  size="lg"
+                  className="gap-2"
+                  data-testid="button-facebook-follow"
+                >
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61581789040254" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <SiFacebook className="w-5 h-5" />
+                    Suivre sur Facebook
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </Card>
 
           <div className="grid md:grid-cols-2 gap-8">
             {cocktails.map((cocktail, index) => (
@@ -110,9 +203,10 @@ export default function About() {
                 className="p-6 hover-elevate transition-all"
                 data-testid={`card-cocktail-${index}`}
               >
-                <h3 className="font-heading font-bold text-2xl mb-4 text-primary" data-testid={`text-cocktail-name-${index}`}>
+                <h3 className="font-heading font-bold text-2xl mb-1 text-primary" data-testid={`text-cocktail-name-${index}`}>
                   {cocktail.name}
                 </h3>
+                <p className="text-sm text-muted-foreground mb-4 italic">{cocktail.subtitle}</p>
                 
                 <div className="mb-4">
                   <h4 className="font-semibold text-foreground mb-2">Ingrédients :</h4>
@@ -126,10 +220,16 @@ export default function About() {
                   </ul>
                 </div>
                 
-                <div>
+                <div className="mb-4">
                   <h4 className="font-semibold text-foreground mb-2">Préparation :</h4>
                   <p className="text-muted-foreground" data-testid={`text-preparation-${index}`}>
                     {cocktail.preparation}
+                  </p>
+                </div>
+
+                <div className="bg-primary/5 rounded-lg p-3 border border-primary/10">
+                  <p className="text-sm text-foreground">
+                    👉 {cocktail.tip}
                   </p>
                 </div>
               </Card>

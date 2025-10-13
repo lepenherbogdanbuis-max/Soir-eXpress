@@ -17,7 +17,7 @@ export default function DeliveryMap() {
 
     const map = new google.maps.Map(mapRef.current, {
       center: lorientCenter,
-      zoom: 10,
+      zoom: 13,
       styles: [
         {
           featureType: "all",
@@ -35,7 +35,7 @@ export default function DeliveryMap() {
       fillOpacity: 0.2,
       map,
       center: lorientCenter,
-      radius: 25000,
+      radius: 4000,
     });
 
     const cities = [
