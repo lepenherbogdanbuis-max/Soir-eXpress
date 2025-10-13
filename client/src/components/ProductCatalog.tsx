@@ -1,8 +1,10 @@
-import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight, Plus, Minus, ShoppingCart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useCart } from "@/hooks/use-cart";
+import { useToast } from "@/hooks/use-toast";
 
 import desperadosImg from "@assets/desparados x1 33cl_1760319800255.png";
 import desperadosPackImg from "@assets/desparadox x12 33cl_1760319800255.png";
@@ -91,6 +93,34 @@ const categories = [
 
 function ProductCard({ product, index, categoryId }: { product: any, index: number, categoryId: string }) {
   const [currentVariant, setCurrentVariant] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const { addItem } = useCart();
+  const { toast } = useToast();
+  
+  const parsePrice = (priceStr: string): number => {
+    return parseFloat(priceStr.replace("€", "").replace(",", ".").trim());
+  };
+  
+  const handleAddToCart = () => {
+    const price = parsePrice(product.price);
+    const variant = product.isCarousel ? product.variants[currentVariant] : null;
+    
+    addItem({
+      id: product.name.toLowerCase().replace(/\s+/g, "-"),
+      name: product.name,
+      price,
+      quantity,
+      variant: variant?.name,
+      image: variant?.image || product.image,
+    });
+    
+    toast({
+      title: "✅ Ajouté au panier",
+      description: `${quantity}x ${product.name}${variant ? ` (${variant.name})` : ""} - ${(price * quantity).toFixed(2)} €`,
+    });
+    
+    setQuantity(1);
+  };
   
   if (product.isCarousel && product.variants) {
     const variant = product.variants[currentVariant];
@@ -137,13 +167,15 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
             </Button>
           </div>
         </div>
-        <div className="p-6">
-          <h3 className="font-semibold text-lg mb-1 text-foreground" data-testid={`text-product-name-${index}`}>
-            {product.name}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-2" data-testid={`text-variant-name-${index}`}>
-            {variant.name}
-          </p>
+        <div className="p-6 space-y-3">
+          <div>
+            <h3 className="font-semibold text-lg mb-1 text-foreground" data-testid={`text-product-name-${index}`}>
+              {product.name}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-2" data-testid={`text-variant-name-${index}`}>
+              {variant.name}
+            </p>
+          </div>
           <div className="flex items-center justify-between">
             <p className="text-2xl font-bold text-primary" data-testid={`text-product-price-${index}`}>
               {product.price}
@@ -151,6 +183,36 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
             <p className="text-xs text-muted-foreground">
               {currentVariant + 1}/{product.variants.length}
             </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 border rounded-md">
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                disabled={quantity <= 1}
+                data-testid={`button-decrease-qty-${index}`}
+              >
+                <Minus className="w-4 h-4" />
+              </Button>
+              <span className="w-8 text-center font-medium" data-testid={`text-quantity-${index}`}>{quantity}</span>
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => setQuantity(quantity + 1)}
+                data-testid={`button-increase-qty-${index}`}
+              >
+                <Plus className="w-4 h-4" />
+              </Button>
+            </div>
+            <Button
+              className="flex-1"
+              onClick={handleAddToCart}
+              data-testid={`button-add-to-cart-${index}`}
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              Ajouter
+            </Button>
           </div>
         </div>
       </Card>
@@ -170,13 +232,43 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
           data-testid={`img-product-${index}`}
         />
       </div>
-      <div className="p-6">
+      <div className="p-6 space-y-3">
         <h3 className="font-semibold text-lg mb-2 text-foreground" data-testid={`text-product-name-${index}`}>
           {product.name}
         </h3>
         <p className="text-2xl font-bold text-primary" data-testid={`text-product-price-${index}`}>
           {product.price}
         </p>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 border rounded-md">
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              disabled={quantity <= 1}
+              data-testid={`button-decrease-qty-${index}`}
+            >
+              <Minus className="w-4 h-4" />
+            </Button>
+            <span className="w-8 text-center font-medium" data-testid={`text-quantity-${index}`}>{quantity}</span>
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => setQuantity(quantity + 1)}
+              data-testid={`button-increase-qty-${index}`}
+            >
+              <Plus className="w-4 h-4" />
+            </Button>
+          </div>
+          <Button
+            className="flex-1"
+            onClick={handleAddToCart}
+            data-testid={`button-add-to-cart-${index}`}
+          >
+            <ShoppingCart className="w-4 h-4 mr-2" />
+            Ajouter
+          </Button>
+        </div>
       </div>
     </Card>
   );
