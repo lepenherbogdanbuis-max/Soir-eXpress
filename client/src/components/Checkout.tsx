@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreditCard, Banknote, Send, CheckCircle, Info, AlertTriangle } from "lucide-react";
+import { CreditCard, Banknote, Send, CheckCircle, Info, AlertTriangle, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -143,6 +143,10 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
                   <div className="flex justify-between text-lg font-bold border-t pt-2">
                     <span>Total</span>
                     <span className="text-primary">{total.toFixed(2)} €</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 bg-primary/10 text-primary rounded-md px-3 py-2 mt-2">
+                    <Truck className="w-4 h-4" />
+                    <span className="text-sm font-semibold">Livraison gratuite - 0 frais !</span>
                   </div>
                 </div>
               </div>

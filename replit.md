@@ -18,6 +18,7 @@ The application features a single-page design with a vibrant orange and beige co
 - **Custom animation delays**: Added delay-75, delay-150, delay-300, delay-500, delay-700 utilities for staggered animations
 - **Minimum order validation**: Added 30€ minimum order requirement with alert and disabled send button when below threshold
 - **Order instructions updated**: Removed mention of automatic address verification from "Comment commander" section
+- **Free delivery banner**: Added prominent "0 frais de livraison" promotional banner at top of catalog and in checkout recap
 
 ## User Preferences
 

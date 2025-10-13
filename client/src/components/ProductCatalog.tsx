@@ -1,4 +1,4 @@
-import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight, Plus, Minus, ShoppingCart } from "lucide-react";
+import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight, Plus, Minus, ShoppingCart, Truck } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -288,6 +288,19 @@ export default function ProductCatalog() {
   return (
     <section className="py-20 px-6 bg-[hsl(30,70%,93%)]" id="catalogue">
       <div className="max-w-6xl mx-auto">
+        {/* Bannière promotionnelle - Livraison gratuite */}
+        <div className="mb-12 -mx-6 sm:mx-0">
+          <div className="bg-gradient-to-r from-primary via-primary/90 to-primary py-4 px-6 shadow-lg animate-pulse" data-testid="banner-free-delivery">
+            <div className="flex items-center justify-center gap-3 text-primary-foreground">
+              <Truck className="w-6 h-6 animate-bounce" />
+              <p className="text-lg md:text-2xl font-bold text-center">
+                🎉 LIVRAISON GRATUITE - 0 FRAIS DE LIVRAISON ! 🎉
+              </p>
+              <Truck className="w-6 h-6 animate-bounce" />
+            </div>
+          </div>
+        </div>
+
         <h2 className="font-heading font-bold text-4xl md:text-5xl text-center mb-16 text-foreground" data-testid="text-catalog-title">
           Notre catalogue
         </h2>
