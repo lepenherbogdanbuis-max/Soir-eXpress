@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreditCard, Banknote, Send, CheckCircle, Info } from "lucide-react";
+import { CreditCard, Banknote, Send, CheckCircle, Info, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -38,6 +38,9 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
   const [address, setAddress] = useState("");
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [orderSent, setOrderSent] = useState(false);
+
+  const MINIMUM_ORDER = 30;
+  const isBelowMinimum = total < MINIMUM_ORDER;
 
   const generateWhatsAppMessage = () => {
     let message = "🛒 *Nouvelle commande SoiréeXpress*\n\n";
@@ -144,6 +147,17 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
                 </div>
               </div>
 
+              {isBelowMinimum && (
+                <Alert variant="destructive" data-testid="alert-minimum-order">
+                  <AlertTriangle className="h-4 w-4" />
+                  <AlertTitle>Montant minimum non atteint</AlertTitle>
+                  <AlertDescription>
+                    Le montant minimum de commande est de <strong>30,00 €</strong>. 
+                    Il vous manque <strong>{(MINIMUM_ORDER - total).toFixed(2)} €</strong> pour valider votre commande.
+                  </AlertDescription>
+                </Alert>
+              )}
+
               <div className="space-y-3">
                 <Label className="text-base font-semibold">Mode de paiement (à la livraison)</Label>
                 <RadioGroup value={paymentMethod} onValueChange={(v) => setPaymentMethod(v as PaymentMethod)}>
@@ -181,7 +195,7 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
                 className="w-full"
                 size="lg"
                 onClick={handleSendOrder}
-                disabled={!address.trim()}
+                disabled={!address.trim() || isBelowMinimum}
                 data-testid="button-send-whatsapp"
               >
                 <Send className="w-4 h-4 mr-2" />

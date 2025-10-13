@@ -16,6 +16,8 @@ The application features a single-page design with a vibrant orange and beige co
 - **Color palette refined**: Beige background adjusted to 30 70% 96% for better harmony
 - **Toast notifications enhanced**: Added "Voir le panier" action button to open cart drawer
 - **Custom animation delays**: Added delay-75, delay-150, delay-300, delay-500, delay-700 utilities for staggered animations
+- **Minimum order validation**: Added 30€ minimum order requirement with alert and disabled send button when below threshold
+- **Order instructions updated**: Removed mention of automatic address verification from "Comment commander" section
 
 ## User Preferences
 
