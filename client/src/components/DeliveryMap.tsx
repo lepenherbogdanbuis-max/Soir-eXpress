@@ -1,72 +1,20 @@
-import { useEffect, useRef } from "react";
+import { MapPin, Clock, Euro } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-declare global {
-  interface Window {
-    google: any;
-  }
-}
+const cities = [
+  "Lorient",
+  "Lanester", 
+  "Quéven",
+  "Pont-Scorff",
+  "Rédené",
+  "Guidel",
+  "Larmor-Plage",
+  "Moëlan-sur-Mer",
+  "Quimperlé",
+];
 
 export default function DeliveryMap() {
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!mapRef.current || !(window as any).google) return;
-
-    const lorientCenter = { lat: 47.7482, lng: -3.3667 };
-    const google = (window as any).google;
-
-    const map = new google.maps.Map(mapRef.current, {
-      center: lorientCenter,
-      zoom: 10,
-      styles: [
-        {
-          featureType: "all",
-          elementType: "geometry",
-          stylers: [{ saturation: -20 }]
-        }
-      ],
-    });
-
-    new google.maps.Circle({
-      strokeColor: "#FBEEDC",
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-      fillColor: "#E84C3D",
-      fillOpacity: 0.2,
-      map,
-      center: lorientCenter,
-      radius: 25000,
-    });
-
-    const cities = [
-      { name: "Lorient", lat: 47.7482, lng: -3.3667 },
-      { name: "Lanester", lat: 47.7631, lng: -3.3397 },
-      { name: "Quéven", lat: 47.7867, lng: -3.4167 },
-      { name: "Pont-Scorff", lat: 47.8333, lng: -3.4000 },
-      { name: "Rédené", lat: 47.8500, lng: -3.4667 },
-      { name: "Guidel", lat: 47.7833, lng: -3.5000 },
-      { name: "Larmor-Plage", lat: 47.7083, lng: -3.3833 },
-      { name: "Moëlan-sur-Mer", lat: 47.8167, lng: -3.6333 },
-      { name: "Quimperlé", lat: 47.8719, lng: -3.5486 },
-    ];
-
-    cities.forEach((city) => {
-      new google.maps.Marker({
-        position: { lat: city.lat, lng: city.lng },
-        map,
-        title: city.name,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 6,
-          fillColor: "#E84C3D",
-          fillOpacity: 0.9,
-          strokeColor: "#FBEEDC",
-          strokeWeight: 2,
-        },
-      });
-    });
-  }, []);
-
   return (
     <section className="py-20 px-6 bg-background" id="zone">
       <div className="max-w-6xl mx-auto">
@@ -74,13 +22,78 @@ export default function DeliveryMap() {
           Zone de livraison
         </h2>
         
-        <div 
-          ref={mapRef} 
-          className="w-full h-[400px] md:h-[500px] rounded-lg shadow-lg mb-6"
-          data-testid="map-container"
-        ></div>
-        
-        <div className="bg-[hsl(30,70%,93%)] p-6 rounded-lg border-l-4 border-primary max-w-2xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          {/* Carte visuelle de la zone */}
+          <Card className="p-8 flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5" data-testid="delivery-zone-visual">
+            <div className="relative">
+              <div className="w-48 h-48 rounded-full border-4 border-primary/30 flex items-center justify-center">
+                <div className="w-32 h-32 rounded-full border-4 border-primary/50 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-primary-foreground" />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-2 -right-2">
+                <Badge className="bg-primary text-primary-foreground">25 km</Badge>
+              </div>
+            </div>
+            <p className="mt-6 text-center font-semibold text-lg text-foreground">
+              Rayon de 25 km autour de Lorient
+            </p>
+          </Card>
+
+          {/* Villes desservies */}
+          <Card className="p-8" data-testid="cities-list">
+            <h3 className="font-semibold text-xl mb-6 text-center text-foreground flex items-center justify-center gap-2">
+              <MapPin className="w-5 h-5 text-primary" />
+              Villes desservies
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {cities.map((city, index) => (
+                <div 
+                  key={city} 
+                  className="flex items-center gap-2 text-foreground"
+                  data-testid={`city-item-${index}`}
+                >
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="text-sm font-medium">{city}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground text-center">
+              Et toutes les communes dans un rayon de 25 km
+            </p>
+          </Card>
+        </div>
+
+        {/* Informations importantes */}
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-hours">
+            <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
+            <h4 className="font-semibold text-foreground mb-2">Horaires</h4>
+            <p className="text-muted-foreground text-sm">
+              1h30 - 5h00 du matin
+            </p>
+          </Card>
+
+          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-minimum">
+            <Euro className="w-8 h-8 text-primary mx-auto mb-3" />
+            <h4 className="font-semibold text-foreground mb-2">Commande minimum</h4>
+            <p className="text-muted-foreground text-sm">
+              30 € minimum
+            </p>
+          </Card>
+
+          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-delivery">
+            <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
+            <h4 className="font-semibold text-foreground mb-2">Livraison gratuite</h4>
+            <p className="text-muted-foreground text-sm">
+              0 frais de livraison
+            </p>
+          </Card>
+        </div>
+
+        <div className="bg-[hsl(30,70%,93%)] p-6 rounded-lg border-l-4 border-primary max-w-2xl mx-auto mt-8">
           <p className="text-center text-foreground font-medium" data-testid="text-map-legend">
             Zone SoiréeXpress – livraison entre 1h30 et 5h (minimum 30 €)
           </p>

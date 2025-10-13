@@ -10,6 +10,7 @@ The application features a single-page design with a vibrant orange and beige co
 
 - **WhatsApp number updated**: Changed from 33757911933 to 0766458205 (international: 33766458205)
 - **Google Maps removed**: Address verification feature removed, simplified to direct text input
+- **Delivery zone redesigned**: Replaced Google Maps visual with static display showing 25km radius, served cities list, and service info cards
 - **Cart overlay improved**: Replaced solid black background with blurred overlay effect (backdrop-blur-sm bg-black/20)
 - **Desktop user guidance**: Added alert in checkout for PC users with alternative ordering instructions
 - **Hero section decorated**: Added subtle floating icons (sparkles, wine, coffee, pizza) with pulse animations
