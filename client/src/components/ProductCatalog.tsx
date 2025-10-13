@@ -117,11 +117,16 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
     toast({
       title: "✅ Ajouté au panier",
       description: `${quantity}x ${product.name}${variant ? ` (${variant.name})` : ""} - ${(price * quantity).toFixed(2)} €`,
-      action: {
-        altText: "Voir le panier",
-        label: "Voir le panier",
-        onClick: () => setIsCartOpen(true),
-      },
+      action: (
+        <Button 
+          size="sm" 
+          variant="outline" 
+          onClick={() => setIsCartOpen(true)}
+          data-testid="button-view-cart-toast"
+        >
+          Voir le panier
+        </Button>
+      ),
     });
     
     setQuantity(1);
