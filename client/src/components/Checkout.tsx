@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreditCard, Banknote, Send, CheckCircle } from "lucide-react";
+import { CreditCard, Banknote, Send, CheckCircle, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -69,7 +70,7 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
 
   const confirmOrder = () => {
     const message = generateWhatsAppMessage();
-    const whatsappNumber = "33757911933";
+    const whatsappNumber = "33766458205";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     
     window.open(whatsappUrl, "_blank");
@@ -96,6 +97,14 @@ export default function Checkout({ open, onOpenChange }: CheckoutProps) {
               Choisissez votre mode de paiement et entrez votre adresse de livraison
             </DialogDescription>
           </DialogHeader>
+
+          <Alert className="hidden md:block bg-primary/10 border-primary/20" data-testid="alert-desktop-info">
+            <Info className="h-4 w-4" />
+            <AlertTitle>Pour les utilisateurs sur PC</AlertTitle>
+            <AlertDescription>
+              Une fois votre panier validé, vous pouvez également envoyer votre commande par message ou WhatsApp au <strong className="font-semibold">07 66 45 82 05</strong> en indiquant votre adresse de livraison.
+            </AlertDescription>
+          </Alert>
 
           {orderSent ? (
             <div className="py-8 text-center space-y-4">
