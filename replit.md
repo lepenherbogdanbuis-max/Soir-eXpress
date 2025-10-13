@@ -6,6 +6,17 @@ SoiréeXpress is a late-night delivery service web application for Lorient, Fran
 
 The application features a single-page design with a vibrant orange and beige color scheme, targeting late-night party-goers with a fun yet professional aesthetic. The site includes product catalogs, service area maps, ordering instructions, and SEO optimization for local search visibility.
 
+## Recent Changes (October 2025)
+
+- **WhatsApp number updated**: Changed from 33757911933 to 0766458205 (international: 33766458205)
+- **Google Maps removed**: Address verification feature removed, simplified to direct text input
+- **Cart overlay improved**: Replaced solid black background with blurred overlay effect (backdrop-blur-sm bg-black/20)
+- **Desktop user guidance**: Added alert in checkout for PC users with alternative ordering instructions
+- **Hero section decorated**: Added subtle floating icons (sparkles, wine, coffee, pizza) with pulse animations
+- **Color palette refined**: Beige background adjusted to 30 70% 96% for better harmony
+- **Toast notifications enhanced**: Added "Voir le panier" action button to open cart drawer
+- **Custom animation delays**: Added delay-75, delay-150, delay-300, delay-500, delay-700 utilities for staggered animations
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -33,9 +44,12 @@ Preferred communication style: Simple, everyday language.
 
 **Key Design Decisions:**
 - Single-page application architecture to provide smooth scrolling experience between sections
-- Cart functionality built with Context API to avoid prop drilling and enable global cart access
-- WhatsApp integration for order placement (generates pre-filled message with cart contents)
-- Google Maps integration for delivery zone visualization
+- Cart functionality built with Context API (CartContext) with isCartOpen state for drawer control
+- WhatsApp integration for order placement at 07 66 45 82 05 (international: 33766458205)
+- Simplified checkout: direct address input without Google Maps verification
+- Cart drawer with blurred overlay effect (backdrop-blur-sm) instead of solid background
+- Desktop-specific alert for PC users with alternative ordering instructions
+- Decorative floating icons on hero section with pulse animations
 
 ### Backend Architecture
 
@@ -76,9 +90,8 @@ Preferred communication style: Simple, everyday language.
 ### External Dependencies
 
 **Third-Party Services:**
-- **Google Maps JavaScript API**: Used for displaying delivery zone coverage with circular radius overlay centered on Lorient
 - **Google Tag Manager**: Analytics and tracking implementation (GTM-52SR2PJ4)
-- **WhatsApp Business API**: Order placement via pre-formatted message links (not a direct integration, uses URL scheme)
+- **WhatsApp Business**: Order placement via pre-formatted message links to 07 66 45 82 05 (uses wa.me URL scheme with international format 33766458205)
 
 **Key External Libraries:**
 - **Neon Serverless**: PostgreSQL driver configured but not actively used
