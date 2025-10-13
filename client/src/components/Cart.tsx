@@ -1,4 +1,5 @@
 import { ShoppingCart, Trash2, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,9 +11,11 @@ import {
 } from "@/components/ui/sheet";
 import { useCart } from "@/hooks/use-cart";
 import { Badge } from "@/components/ui/badge";
+import Checkout from "@/components/Checkout";
 
 export default function Cart() {
   const { items, total, itemCount, updateQuantity, removeItem } = useCart();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   return (
     <Sheet>
@@ -118,10 +121,12 @@ export default function Cart() {
             <Button 
               className="w-full" 
               size="lg"
+              onClick={() => setCheckoutOpen(true)}
               data-testid="button-proceed-checkout"
             >
               Valider la commande
             </Button>
+            <Checkout open={checkoutOpen} onOpenChange={setCheckoutOpen} />
           </div>
         )}
       </SheetContent>
