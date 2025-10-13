@@ -14,8 +14,8 @@ const orderSteps = [
   },
   {
     icon: MapPin,
-    title: "3. Vérifie ton adresse",
-    description: "Ton adresse sera automatiquement vérifiée pour s'assurer qu'elle est dans notre zone de livraison",
+    title: "3. Entre ton adresse",
+    description: "Saisis ton adresse de livraison à Lorient et alentours",
   },
   {
     icon: Send,
