@@ -77,6 +77,10 @@ Merci les gars 🍻`}
           <p className="text-sm text-primary-foreground/70 mt-6">
             Minimum de commande : 30 € • Livraison de 1h30 à 5h
           </p>
+          
+          <p className="text-xs text-primary-foreground/60 mt-4 max-w-lg mx-auto" data-testid="text-warning-30min">
+            ⚠️ Si vous ne recevez aucune réponse dans les 30 minutes, cela signifie que la commande n'a pas pu être acceptée et est donc automatiquement annulée.
+          </p>
         </div>
       </div>
     </section>

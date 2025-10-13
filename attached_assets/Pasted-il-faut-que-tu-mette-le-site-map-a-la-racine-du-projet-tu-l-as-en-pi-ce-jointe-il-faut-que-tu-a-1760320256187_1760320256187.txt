@@ -1,0 +1,120 @@
+il faut que tu mette le site map a la racine du projet (tu l'as en pièce jointe)
+
+il faut que tu ajoutes ça pour le référencement : 
+
+<title>SoirExpress – Livraison d’alcool à Lorient, Guidel et alentours (Morbihan)</title>
+
+<meta name="description" content="SoirExpress propose la livraison d’alcool, boissons, snacks et accessoires à Lorient, Guidel, Gestel, Ploemeur, Quéven, Hennebont et dans tout le Morbihan (56). Livraison rapide tous les soirs de 1h30 à 5h30 pour dépanner vos soirées. Service express, fiable et discret.">
+<meta name="keywords" content="
+livraison alcool Lorient, 
+livraison alcool nuit Lorient, 
+livraison alcool Morbihan, 
+livraison alcool 56, 
+livraison boissons Lorient, 
+livraison bière Lorient, 
+livraison vin Lorient, 
+livraison rhum Lorient, 
+livraison vodka Lorient, 
+livraison whisky Lorient, 
+livraison champagne Lorient, 
+livraison soft Lorient, 
+livraison soda Lorient, 
+livraison snacks Lorient, 
+livraison chips Lorient, 
+livraison accessoires soirée Lorient, 
+livraison préservatifs Lorient, 
+livraison briquet Lorient, 
+livraison soirée Lorient, 
+livraison express Lorient, 
+SoirExpress Lorient, 
+livraison de nuit Lorient, 
+livraison après minuit Lorient, 
+livraison d’alcool tard le soir Lorient, 
+livraison fête Lorient, 
+livraison dépannage soirée Lorient, 
+livraison alcool à domicile Lorient, 
+livraison alcool à domicile Guidel, 
+livraison alcool Guidel, 
+livraison alcool nuit Guidel, 
+livraison boissons Guidel, 
+livraison soirée Guidel, 
+livraison alcool Gestel, 
+livraison alcool Quéven, 
+livraison alcool Ploemeur, 
+livraison alcool Hennebont, 
+livraison alcool Caudan, 
+livraison alcool Lanester, 
+livraison alcool Larmor-Plage, 
+livraison nuit 56, 
+livraison rapide Morbihan, 
+livraison dépannage soirée 56, 
+livraison fête Morbihan, 
+livraison d’alcool express, 
+livraison d’alcool pas cher Lorient, 
+livraison d’alcool étudiant Lorient, 
+livraison boissons froides Lorient, 
+livraison snacks de nuit Lorient, 
+">
+
+<meta property="og:title" content="SoirExpress – Livraison d’alcool à Lorient et alentours">
+<meta property="og:description" content="Livraison d’alcool, boissons, snacks et accessoires à Lorient, Guidel, Ploemeur, Hennebont et alentours. Disponible de 1h30 à 5h30. Service rapide et discret.">
+<meta property="og:url" content="https://www.soireexpress.fr">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.soireexpress.fr/images/preview.jpg">
+<meta name="robots" content="index, follow">
+
+
+ajouter logo site (.ico)
+
+remplacer "Rhum brun Havana Club 70cl" par "Rhum Ambré Havana Club 70cl"
+
+Page accueil :
+
+SoiréeXpress La soirée n'est jamais finie 
+
+ c’est votre service de livraison nocturne d’alcool, boissons et snacks à Lorient et alentours.
+Disponible tous les soirs de 1h30 à 5h30 du matin, SoirExpress dépanne vos soirées, afters, anniversaires ou simples envies de dernière minute.
+
+rajoute dans "comment ça fonctionne" : La commande sera validée dès que notre livreur vous contactera par WhatsApp ou par appel.
+
+rajoute les photos des boissons correspondante, aide toi des noms des photos en png pour voir quelle photo correpond a quoi
+
+rajoute ça en petit : 
+
+⚠️ Si vous ne recevez aucune réponse dans les 30 minutes, cela signifie que la commande n’a pas pu être acceptée et est donc automatiquement annulée.
+
+Installer Google Tag Manager
+Copiez le code ci-dessous et collez-le sur toutes les pages de votre site Web.
+1. Collez ce code le plus haut possible dans la section <head> de la page :
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-52SR2PJ4');</script>
+<!-- End Google Tag Manager -->
+
+2. Collez ce code juste après la balise d'ouverture <body> :
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52SR2PJ4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+rajoute :
+
+Un en-tête clair (header)
+
+Logo + menu simple :
+Accueil | Tarifs | Commander | Contact
+
+Un bouton “Commander maintenant” visible partout.
+
+
+
+ajouter le facebook : https://www.facebook.com/profile.php?id=61581789040254
+
+Crée une page a propos avec des idées de coktails a faire a la maison
+
+fais un lien pour les avis google en disant n'hésitez pas a laisser un avis et met aussi le qr code: 
+https://g.page/r/CRdjTvUWN-gOEAE/review

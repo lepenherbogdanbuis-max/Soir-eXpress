@@ -14,10 +14,14 @@ export default function HeroSection() {
           <h1 className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl text-primary-foreground mb-4" data-testid="text-logo">
             SoiréeXpress
           </h1>
+          <p className="text-2xl md:text-3xl text-primary-foreground/90 mb-6 font-semibold">
+            La soirée n'est jamais finie
+          </p>
         </div>
         
-        <p className="text-xl md:text-2xl lg:text-3xl text-primary-foreground/95 mb-12 leading-relaxed font-medium" data-testid="text-slogan">
-          La soirée n'est jamais finie — SoiréeXpress te livre entre 1h30 et 5h du matin 🍾
+        <p className="text-lg md:text-xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto" data-testid="text-description">
+          C'est votre service de livraison nocturne d'alcool, boissons et snacks à Lorient et alentours.
+          Disponible tous les soirs de 1h30 à 5h30 du matin, SoirExpress dépanne vos soirées, afters, anniversaires ou simples envies de dernière minute.
         </p>
         
         <Button 

@@ -12,7 +12,7 @@ const steps = [
     number: 2,
     icon: Smartphone,
     title: "Envoie un message au 07 66 45 82 05",
-    description: "Commande par SMS, WhatsApp ou appel",
+    description: "Commande par SMS, WhatsApp ou appel. La commande sera validée dès que notre livreur vous contactera par WhatsApp ou par appel.",
   },
   {
     number: 3,

@@ -1,4 +1,4 @@
-import { SiInstagram } from "react-icons/si";
+import { SiInstagram, SiFacebook } from "react-icons/si";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -52,7 +52,7 @@ export default function Footer() {
             </button>
           </nav>
           
-          <div className="flex justify-center md:justify-end items-center">
+          <div className="flex justify-center md:justify-end items-center gap-6">
             <a 
               href="https://www.instagram.com/soireexpress" 
               target="_blank" 
@@ -62,6 +62,16 @@ export default function Footer() {
               aria-label="Instagram"
             >
               <SiInstagram className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://www.facebook.com/profile.php?id=61581789040254" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[hsl(30,70%,93%)]/80 hover:text-primary transition-colors"
+              data-testid="link-facebook"
+              aria-label="Facebook"
+            >
+              <SiFacebook className="w-6 h-6" />
             </a>
           </div>
         </div>

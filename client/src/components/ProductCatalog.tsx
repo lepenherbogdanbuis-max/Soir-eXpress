@@ -2,14 +2,15 @@ import { Wine, Coffee, Popcorn, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import desperadosImg from "@assets/stock_images/desperados_beer_bott_7ca6aec4.jpg";
-import laChouffeImg from "@assets/stock_images/la_chouffe_beer_bott_697e965b.jpg";
-import vodkaImg from "@assets/stock_images/vodka_bottle_e9ad8f87.jpg";
-import darkRumImg from "@assets/stock_images/dark_rum_bottle_817a4f20.jpg";
-import whiteRumImg from "@assets/stock_images/white_rum_bottle_43d90e19.jpg";
-import whiskyImg from "@assets/stock_images/whisky_bottle_4d905661.jpg";
-import ricardImg from "@assets/stock_images/pastis_ricard_bottle_42176082.jpg";
-import get27Img from "@assets/stock_images/get_27_mint_liqueur__44d48077.jpg";
+import desperadosImg from "@assets/desparados x1 33cl_1760319800255.png";
+import desperadosPackImg from "@assets/desparadox x12 33cl_1760319800255.png";
+import laChouffeImg from "@assets/chouffe 33 cl_1760319800255.png";
+import vodkaImg from "@assets/poliakov 70 cl_1760319800254.png";
+import darkRumImg from "@assets/Havana ambré 70 cl_1760319800254.png";
+import whiteRumImg from "@assets/Havana Blanc 70cl_1760319800254.png";
+import whiskyImg from "@assets/clan campbell 70cl_1760319800254.png";
+import ricardImg from "@assets/Ricard 70cl_1760319800255.png";
+import get27Img from "@assets/jet 27 70cl_1760319800255.png";
 import cokaImg from "@assets/stock_images/coca_cola_bottle_1_l_849d9d46.jpg";
 import fantaImg from "@assets/stock_images/fanta_orange_bottle_d6e58e6c.jpg";
 import lemonadeImg from "@assets/stock_images/lemonade_bottle_51e58895.jpg";
@@ -30,10 +31,10 @@ import tshirtImg from "@assets/stock_images/t-shirt_mockup_0c85e506.jpg";
 const products = {
   alcool: [
     { name: "Desperados 33cl", price: "4 €", image: desperadosImg },
-    { name: "Pack Desperados 12x33cl", price: "35 €", image: desperadosImg },
+    { name: "Pack Desperados 12x33cl", price: "35 €", image: desperadosPackImg },
     { name: "La Chouffe 33cl", price: "7 €", image: laChouffeImg },
     { name: "Vodka Poliakoff 70cl", price: "35 €", image: vodkaImg },
-    { name: "Rhum brun Havana Club 70cl", price: "39 €", image: darkRumImg },
+    { name: "Rhum Ambré Havana Club 70cl", price: "39 €", image: darkRumImg },
     { name: "Rhum blanc Havana Club 70cl", price: "38 €", image: whiteRumImg },
     { name: "Whisky Clan Campbell 70cl", price: "40 €", image: whiskyImg },
     { name: "Ricard 70cl", price: "38 €", image: ricardImg },
