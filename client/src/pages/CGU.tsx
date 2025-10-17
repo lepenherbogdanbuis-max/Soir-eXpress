@@ -149,7 +149,7 @@ export default function CGU() {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-primary font-bold">•</span>
-                  <span>Des éthylotests sont disponibles en pharmacie pour votre sécurité.</span>
+                  <span>Des éthylotests sont disponibles sur notre site pour votre sécurité.</span>
                 </li>
               </ul>
             </section>
