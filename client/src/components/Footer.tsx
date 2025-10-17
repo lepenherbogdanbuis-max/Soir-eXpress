@@ -1,10 +1,52 @@
 import { SiInstagram, SiFacebook } from "react-icons/si";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { AlertTriangle } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function Footer() {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const [location, setLocation] = useLocation();
+  const pendingScrollRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    // Si on est sur la page d'accueil et qu'on a un scroll en attente
+    if (location === '/' && pendingScrollRef.current) {
+      const sectionId = pendingScrollRef.current;
+      pendingScrollRef.current = null;
+
+      // Essayer de scroller avec un retry pour s'assurer que l'élément existe
+      const scrollToElement = (retries = 10) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else if (retries > 0) {
+          setTimeout(() => scrollToElement(retries - 1), 50);
+        }
+      };
+
+      scrollToElement();
+    }
+  }, [location]);
+
+  const handleNavigation = (sectionId?: string) => {
+    if (location !== '/') {
+      // Si on n'est pas sur la page d'accueil, enregistrer le scroll en attente
+      if (sectionId) {
+        pendingScrollRef.current = sectionId;
+      }
+      setLocation('/');
+      
+      // Si pas de section spécifique, juste scroller en haut après navigation
+      if (!sectionId) {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+      }
+    } else {
+      // Si on est déjà sur la page d'accueil, scroller directement
+      if (sectionId) {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -25,28 +67,28 @@ export default function Footer() {
           
           <nav className="flex flex-wrap justify-center gap-4 items-center">
             <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => handleNavigation()}
               className="text-[hsl(30,70%,93%)]/80 hover:text-primary transition-colors"
               data-testid="link-accueil"
             >
               Accueil
             </button>
             <button 
-              onClick={() => scrollToSection('catalogue')}
+              onClick={() => handleNavigation('catalogue')}
               className="text-[hsl(30,70%,93%)]/80 hover:text-primary transition-colors"
               data-testid="link-catalogue"
             >
               Catalogue
             </button>
             <button 
-              onClick={() => scrollToSection('commander')}
+              onClick={() => handleNavigation('commander')}
               className="text-[hsl(30,70%,93%)]/80 hover:text-primary transition-colors"
               data-testid="link-commander"
             >
               Commander
             </button>
             <button 
-              onClick={() => scrollToSection('reglement')}
+              onClick={() => handleNavigation('reglement')}
               className="text-[hsl(30,70%,93%)]/80 hover:text-primary transition-colors"
               data-testid="link-reglement"
             >
@@ -99,7 +141,7 @@ export default function Footer() {
           
           <p className="text-[hsl(30,70%,93%)]/70 text-xs flex items-center justify-center gap-2">
             <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-            <span>L'abus d'alcool est dangereux pour la santé. Ne conduisez pas après avoir consommé de l'alcool. Des éthylotests sont disponibles en pharmacie.</span>
+            <span>L'abus d'alcool est dangereux pour la santé. Ne conduisez pas après avoir consommé de l'alcool. Des éthylotests sont disponibles sur notre site.</span>
           </p>
           
           <p className="text-[hsl(30,70%,93%)]/70 text-sm" data-testid="text-copyright">

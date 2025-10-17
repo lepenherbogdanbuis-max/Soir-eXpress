@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 
 // Images importées
 import vodkaImg from "@assets/poliakov 70 cl_1760319800254.png";
-import darkRumImg from "@assets/Havana ambré 70 cl_1760319800254.png";
 import whiteRumImg from "@assets/Havana Blanc 70cl_1760319800254.png";
 import whiskyImg from "@assets/clan campbell 70cl_1760319800254.png";
 import ricardImg from "@assets/Ricard 70cl_1760319800255.png";
@@ -24,9 +23,18 @@ import redBullPastèqueImg from "@assets/RedBull pasteque_1760327215988.png";
 import redBullPêcheImg from "@assets/RedBull peche blanche_1760327215989.png";
 import redBullPommeImg from "@assets/Red bull Pomme fuidji & Gingembre_1760327215989.png";
 import megaForceImg from "@assets/Boisson énergisante 1L_1760327215988.png";
-import chipsImg from "@assets/Chips Breizh_1760327215987.png";
-import curlyImg from "@assets/stock_images/curly_snacks_bag_97acb948.jpg";
-import lighterImg from "@assets/stock_images/lighter_dc74efca.jpg";
+
+// Nouvelles images produits fournies
+import jackDanielsImg from "@assets/jack-daniels-70cl.png";
+import jackDanielsMielImg from "@assets/jack-daniels-miel-70cl.png";
+import ginImg from "@assets/gin-70cl.png";
+import jagermeisterImg from "@assets/jagermeister-70cl.png";
+import darkRumImg from "@assets/havana-ambre-70cl.png";
+import chipsImg from "@assets/chips-breizh.png";
+import curlyImg from "@assets/curly.png";
+import dragibusImg from "@assets/dragibus-haribo.png";
+import lighterImg from "@assets/briquet.png";
+import ethylotestImg from "@assets/ethylotest.png";
 
 // Nouvelles images des produits
 const desperadosPackImg = "/products/desperados-pack-12.png";
@@ -54,8 +62,8 @@ const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/
 const products = {
   spiritueux: [
     // Whisky
-    { name: "Jack Daniel's 70cl", price: "45 €", image: placeholderImg },
-    { name: "Jack Daniel's Miel 70cl", price: "45 €", image: placeholderImg },
+    { name: "Jack Daniel's 70cl", price: "45 €", image: jackDanielsImg },
+    { name: "Jack Daniel's Miel 70cl", price: "45 €", image: jackDanielsMielImg },
     { name: "Clan Campbell 70cl", price: "38 €", image: whiskyImg },
     // Vodka
     { name: "Poliakov 70cl", price: "30 €", image: vodkaImg },
@@ -65,12 +73,12 @@ const products = {
     // Tequila
     { name: "Tequila 70cl", price: "38 €", image: tequilaImg },
     // Gin
-    { name: "Gin 70cl", price: "35 €", image: placeholderImg },
+    { name: "Gin 70cl", price: "35 €", image: ginImg },
     // Liqueurs
     { name: "Ricard 70cl", price: "38 €", image: ricardImg },
     { name: "Get 27 70cl", price: "35 €", image: get27Img },
     { name: "Baileys 70cl", price: "35 €", image: placeholderImg },
-    { name: "Jägermeister 70cl", price: "40 €", image: placeholderImg },
+    { name: "Jägermeister 70cl", price: "40 €", image: jagermeisterImg },
   ],
   biere: [
     { name: "Pack 12 Desperados 33cl", price: "30 €", image: desperadosPackImg },
@@ -113,7 +121,7 @@ const products = {
   sucre: [
     { name: "Maltesers Billes chocolatées", price: "7 €", image: maltesersImg },
     { name: "M&Ms", price: "7 €", image: mmsImg },
-    { name: "Dragibus Haribo", price: "5 €", image: placeholderImg },
+    { name: "Dragibus Haribo", price: "5 €", image: dragibusImg },
     { name: "Kinder Bueno Chocolat au lait x2", price: "4 €", image: kinderBuenoImg },
   ],
   accessoires: [
@@ -121,7 +129,7 @@ const products = {
     { name: "Briquet", price: "3 €", image: lighterImg },
     { name: "Jeu de cartes", price: "5 €", image: cartesImg },
     { name: "Lunettes", price: "5 €", image: lunettesImg },
-    { name: "Éthylotest", price: "3 €", image: placeholderImg },
+    { name: "Éthylotest", price: "3 €", image: ethylotestImg },
     { name: "T-shirt SoiréeXpress", price: "10 €", image: tshirtImg },
   ],
 };
