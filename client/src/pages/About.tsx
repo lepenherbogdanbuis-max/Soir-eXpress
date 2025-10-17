@@ -118,17 +118,17 @@ const cocktails = [
     tip: "Simple, chaud en goût, parfait pour les soirées plus calmes."
   },
   {
-    name: "Virgin Mojito",
-    subtitle: "Sans alcool, mais full ambiance",
+    name: "Citrus Fizz Maison",
+    subtitle: "Facile, pétillant, et super frais",
     ingredients: [
-      "1/2 citron vert",
-      "2 c. à café de sucre de canne",
-      "8 feuilles de menthe fraîche",
-      "Eau gazeuse",
-      "Glaçons"
+      "1/2 citron (jus)",
+      "1 c. à café de miel ou de sucre",
+      "1/2 verre de jus d'orange",
+      "Eau gazeuse (ou limonade si tu veux plus sucré)",
+      "Quelques glaçons"
     ],
-    preparation: "Mets le citron et le sucre dans le verre et pile doucement. Claque la menthe entre tes mains, ajoute-la. Mets les glaçons puis verse l'eau gazeuse.",
-    tip: "Même sans rhum, ça reste frais et festif."
+    preparation: "Dans un grand verre, presse le jus du demi-citron. Ajoute le miel (ou sucre) et mélange bien. Verse le jus d'orange, puis remplis le verre de glaçons. Complète avec l'eau gazeuse. Mélange légèrement, ajoute une rondelle d'orange pour le look.",
+    tip: "Prêt en 1 minute, super désaltérant, et parfait pour les apéros improvisés !"
   }
 ];
 

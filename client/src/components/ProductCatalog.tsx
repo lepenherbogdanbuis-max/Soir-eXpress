@@ -1,4 +1,4 @@
-import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight, Plus, Minus, ShoppingCart, Truck } from "lucide-react";
+import { Wine, Coffee, Popcorn, Sparkles, ChevronLeft, ChevronRight, Plus, Minus, ShoppingCart, Truck, Beer, Grape, Candy, UtensilsCrossed } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -6,9 +6,7 @@ import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
 
-import desperadosImg from "@assets/desparados x1 33cl_1760319800255.png";
-import desperadosPackImg from "@assets/desparadox x12 33cl_1760319800255.png";
-import laChouffeImg from "@assets/chouffe 33 cl_1760319800255.png";
+// Images importées
 import vodkaImg from "@assets/poliakov 70 cl_1760319800254.png";
 import darkRumImg from "@assets/Havana ambré 70 cl_1760319800254.png";
 import whiteRumImg from "@assets/Havana Blanc 70cl_1760319800254.png";
@@ -27,26 +25,63 @@ import redBullPêcheImg from "@assets/RedBull peche blanche_1760327215989.png";
 import redBullPommeImg from "@assets/Red bull Pomme fuidji & Gingembre_1760327215989.png";
 import megaForceImg from "@assets/Boisson énergisante 1L_1760327215988.png";
 import chipsImg from "@assets/Chips Breizh_1760327215987.png";
-import pringlesImg from "@assets/stock_images/pringles_chips_can_68ec4378.jpg";
 import curlyImg from "@assets/stock_images/curly_snacks_bag_97acb948.jpg";
-import monsterMunchImg from "@assets/stock_images/monster_munch_crisps_db31ed8e.jpg";
-import condomImg from "@assets/stock_images/condom_package_55a88b21.jpg";
 import lighterImg from "@assets/stock_images/lighter_dc74efca.jpg";
-import cardsImg from "@assets/stock_images/playing_cards_deck_1bbc0d5a.jpg";
-import sunglassesImg from "@assets/stock_images/party_sunglasses_b1857205.jpg";
-import tshirtImg from "@assets/stock_images/t-shirt_mockup_0c85e506.jpg";
+
+// Nouvelles images des produits
+const desperadosPackImg = "/products/desperados-pack-12.png";
+const heinekenPackImg = "/products/heineken-pack-12.png";
+const goudalePackImg = "/products/goudale-pack-12.png";
+const santErwannPackImg = "/products/sant-erwann-pack-12.png";
+const tequilaImg = "/products/tequila.png";
+const vinBlancImg = "/products/vin-blanc.png";
+const vinRoseImg = "/products/vin-rose.png";
+const vinRougeImg = "/products/vin-rouge.png";
+const pringlesImg = "/products/pringles.png";
+const monsterMunchImg = "/products/monster-munch.png";
+const saucissonImg = "/products/saucisson.png";
+const maltesersImg = "/products/maltesers.png";
+const mmsImg = "/products/mms.png";
+const kinderBuenoImg = "/products/kinder-bueno.png";
+const preservatifImg = "/products/preservatif.png";
+const cartesImg = "/products/cartes.png";
+const lunettesImg = "/products/lunettes.png";
+const tshirtImg = "/products/tshirt.png";
+
+// Image placeholder pour les produits sans image
+const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23f5f5f5' width='400' height='400'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='18' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EImage à venir%3C/text%3E%3C/svg%3E";
 
 const products = {
-  alcool: [
-    { name: "Desperados 33cl", price: "4 €", image: desperadosImg },
-    { name: "Pack Desperados 12x33cl", price: "35 €", image: desperadosPackImg },
-    { name: "La Chouffe 33cl", price: "7 €", image: laChouffeImg },
-    { name: "Vodka Poliakoff 70cl", price: "35 €", image: vodkaImg },
-    { name: "Rhum Ambré Havana Club 70cl", price: "39 €", image: darkRumImg },
-    { name: "Rhum blanc Havana Club 70cl", price: "38 €", image: whiteRumImg },
-    { name: "Whisky Clan Campbell 70cl", price: "40 €", image: whiskyImg },
+  spiritueux: [
+    // Whisky
+    { name: "Jack Daniel's 70cl", price: "45 €", image: placeholderImg },
+    { name: "Jack Daniel's Miel 70cl", price: "45 €", image: placeholderImg },
+    { name: "Clan Campbell 70cl", price: "38 €", image: whiskyImg },
+    // Vodka
+    { name: "Poliakov 70cl", price: "30 €", image: vodkaImg },
+    // Rhum
+    { name: "Havana Club blanc 70cl", price: "34 €", image: whiteRumImg },
+    { name: "Havana Club ambré 70cl", price: "35 €", image: darkRumImg },
+    // Tequila
+    { name: "Tequila 70cl", price: "38 €", image: tequilaImg },
+    // Gin
+    { name: "Gin 70cl", price: "35 €", image: placeholderImg },
+    // Liqueurs
     { name: "Ricard 70cl", price: "38 €", image: ricardImg },
-    { name: "GET 27 70cl", price: "40 €", image: get27Img },
+    { name: "Get 27 70cl", price: "35 €", image: get27Img },
+    { name: "Baileys 70cl", price: "35 €", image: placeholderImg },
+    { name: "Jägermeister 70cl", price: "40 €", image: placeholderImg },
+  ],
+  biere: [
+    { name: "Pack 12 Desperados 33cl", price: "30 €", image: desperadosPackImg },
+    { name: "Pack 12 Heineken 25cl", price: "25 €", image: heinekenPackImg },
+    { name: "Pack 12 Goudale 25cl", price: "25 €", image: goudalePackImg },
+    { name: "Pack 12 Sant Erwann 25cl", price: "28 €", image: santErwannPackImg },
+  ],
+  vin: [
+    { name: "Vin blanc 70cl", price: "12 €", image: vinBlancImg },
+    { name: "Vin rosé 70cl", price: "12 €", image: vinRoseImg },
+    { name: "Vin rouge 70cl", price: "12 €", image: vinRougeImg },
   ],
   softs: [
     { name: "Coca 1L", price: "5 €", image: cokaImg },
@@ -68,26 +103,40 @@ const products = {
     },
     { name: "Mega Force 1L", price: "8 €", image: megaForceImg },
   ],
-  snacks: [
-    { name: "Chips Breizh 125g", price: "5 €", image: chipsImg },
+  sale: [
+    { name: "Chips Breizh", price: "5 €", image: chipsImg },
     { name: "Pringles", price: "5 €", image: pringlesImg },
     { name: "Curly", price: "5 €", image: curlyImg },
     { name: "Monster Munch", price: "5 €", image: monsterMunchImg },
+    { name: "Saucisson sec", price: "8 €", image: saucissonImg },
+  ],
+  sucre: [
+    { name: "Maltesers Billes chocolatées", price: "7 €", image: maltesersImg },
+    { name: "M&Ms", price: "7 €", image: mmsImg },
+    { name: "Dragibus Haribo", price: "5 €", image: placeholderImg },
+    { name: "Kinder Bueno Chocolat au lait x2", price: "4 €", image: kinderBuenoImg },
   ],
   accessoires: [
-    { name: "Préservatif x1", price: "3 €", image: condomImg },
-    { name: "Préservatifs x12", price: "15 €", image: condomImg },
-    { name: "Briquet", price: "5 €", image: lighterImg },
-    { name: "Jeu de cartes", price: "7 €", image: cardsImg },
-    { name: "Lunettes", price: "5 €", image: sunglassesImg },
+    { name: "Préservatif x3", price: "6 €", image: preservatifImg },
+    { name: "Briquet", price: "3 €", image: lighterImg },
+    { name: "Jeu de cartes", price: "5 €", image: cartesImg },
+    { name: "Lunettes", price: "5 €", image: lunettesImg },
+    { name: "Éthylotest", price: "3 €", image: placeholderImg },
     { name: "T-shirt SoiréeXpress", price: "10 €", image: tshirtImg },
   ],
 };
 
 const categories = [
-  { id: "alcool", label: "Alcool", icon: Wine },
+  { id: "alcool", label: "Alcool", icon: Wine, subcategories: [
+    { id: "spiritueux", label: "Spiritueux", icon: Wine },
+    { id: "biere", label: "Bière", icon: Beer },
+    { id: "vin", label: "Vin", icon: Grape },
+  ]},
   { id: "softs", label: "Softs", icon: Coffee },
-  { id: "snacks", label: "Snacks", icon: Popcorn },
+  { id: "snacks", label: "Snacks", icon: Popcorn, subcategories: [
+    { id: "sale", label: "Salé", icon: UtensilsCrossed },
+    { id: "sucre", label: "Sucré", icon: Candy },
+  ]},
   { id: "accessoires", label: "Accessoires", icon: Sparkles },
 ];
 
@@ -285,6 +334,9 @@ function ProductCard({ product, index, categoryId }: { product: any, index: numb
 }
 
 export default function ProductCatalog() {
+  const [activeAlcoolTab, setActiveAlcoolTab] = useState("spiritueux");
+  const [activeSnacksTab, setActiveSnacksTab] = useState("sale");
+
   return (
     <section className="py-20 px-6 bg-[hsl(30,70%,93%)]" id="catalogue">
       <div className="max-w-6xl mx-auto">
@@ -323,20 +375,107 @@ export default function ProductCatalog() {
             })}
           </TabsList>
           
-          {categories.map((cat) => (
-            <TabsContent key={cat.id} value={cat.id}>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {products[cat.id as keyof typeof products].map((product, index) => (
-                  <ProductCard 
-                    key={index} 
-                    product={product} 
-                    index={index} 
-                    categoryId={cat.id}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-          ))}
+          {/* Alcool avec sous-menus */}
+          <TabsContent value="alcool">
+            <Tabs value={activeAlcoolTab} onValueChange={setActiveAlcoolTab} className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-8">
+                {categories[0].subcategories!.map((subcat) => {
+                  const Icon = subcat.icon;
+                  return (
+                    <TabsTrigger 
+                      key={subcat.id} 
+                      value={subcat.id}
+                      className="flex items-center gap-2"
+                      data-testid={`tab-${subcat.id}`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {subcat.label}
+                    </TabsTrigger>
+                  );
+                })}
+              </TabsList>
+              
+              {categories[0].subcategories!.map((subcat) => (
+                <TabsContent key={subcat.id} value={subcat.id}>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {products[subcat.id as keyof typeof products].map((product, index) => (
+                      <ProductCard 
+                        key={index} 
+                        product={product} 
+                        index={index} 
+                        categoryId={subcat.id}
+                      />
+                    ))}
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </TabsContent>
+
+          {/* Softs sans sous-menus */}
+          <TabsContent value="softs">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.softs.map((product, index) => (
+                <ProductCard 
+                  key={index} 
+                  product={product} 
+                  index={index} 
+                  categoryId="softs"
+                />
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* Snacks avec sous-menus */}
+          <TabsContent value="snacks">
+            <Tabs value={activeSnacksTab} onValueChange={setActiveSnacksTab} className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                {categories[2].subcategories!.map((subcat) => {
+                  const Icon = subcat.icon;
+                  return (
+                    <TabsTrigger 
+                      key={subcat.id} 
+                      value={subcat.id}
+                      className="flex items-center gap-2"
+                      data-testid={`tab-${subcat.id}`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {subcat.label}
+                    </TabsTrigger>
+                  );
+                })}
+              </TabsList>
+              
+              {categories[2].subcategories!.map((subcat) => (
+                <TabsContent key={subcat.id} value={subcat.id}>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {products[subcat.id as keyof typeof products].map((product, index) => (
+                      <ProductCard 
+                        key={index} 
+                        product={product} 
+                        index={index} 
+                        categoryId={subcat.id}
+                      />
+                    ))}
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </TabsContent>
+
+          {/* Accessoires sans sous-menus */}
+          <TabsContent value="accessoires">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.accessoires.map((product, index) => (
+                <ProductCard 
+                  key={index} 
+                  product={product} 
+                  index={index} 
+                  categoryId="accessoires"
+                />
+              ))}
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </section>

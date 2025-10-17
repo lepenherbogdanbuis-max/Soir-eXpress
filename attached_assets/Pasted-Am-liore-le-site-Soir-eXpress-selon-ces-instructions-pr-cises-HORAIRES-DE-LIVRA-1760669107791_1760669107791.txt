@@ -1,0 +1,151 @@
+Améliore le site SoiréeXpress selon ces instructions précises :  
+
+---
+
+### 🕒 HORAIRES DE LIVRAISON
+Modifier les horaires comme suit :
+- Livraison uniquement entre **1h30 et 5h**, dans la zone couverte.
+- **Lundi et mardi :** 22h – 5h  
+- **Mercredi, jeudi, vendredi, samedi, dimanche :** 1h – 5h  
+
+---
+
+### 🍹 COCKTAILS
+Remplacer **Virgin Mojito** par **Citrus Fizz Maison**  
+Texte à insérer :
+
+**Citrus Fizz Maison**
+
+Facile, pétillant, et super frais
+
+**Ingrédients :**
+• 1/2 citron (jus)  
+• 1 c. à café de miel ou de sucre  
+• 1/2 verre de jus d’orange  
+• Eau gazeuse (ou limonade si tu veux plus sucré)  
+• Quelques glaçons  
+
+**Préparation :**
+Dans un grand verre, presse le jus du demi-citron.  
+Ajoute le miel (ou sucre) et mélange bien.  
+Verse le jus d’orange, puis remplis le verre de glaçons.  
+Complète avec l’eau gazeuse.  
+Mélange légèrement, ajoute une rondelle d’orange pour le look 🍊  
+
+👉 Prêt en 1 minute, super désaltérant, et parfait pour les apéros improvisés !
+
+---
+
+### 🧃 CATÉGORIES PRODUITS
+#### 🥃 ALCOOL
+Ajouter un sous-menu : **Spiritueux / Vin / Bière**
+
+##### Spiritueux
+**WHISKY**
+- Jack Daniel’s 70cl — 45€  
+- Jack Daniel’s Miel 70cl — 45€  
+- Clan Campbell 70cl — 38€  
+
+**VODKA**
+- Poliakov 70cl — 30€  
+
+**RHUM**
+- Havana Club blanc 70cl — 34€  
+- Havana Club ambré 70cl — 35€  
+
+**TEQUILA**
+- Tequila 70cl — 38€  
+
+**GIN**
+- Gin 70cl — 35€  
+
+**LIQUEURS ET AUTRES**
+- Ricard 70cl — 38€  
+- Get 27 70cl — 35€  
+- Baileys 70cl — 35€  
+- Jägermeister 70cl — 40€  
+
+##### 🍺 BIÈRE
+- Pack 12 Desperados 33cl — 30€  
+- Pack 12 Heineken 25cl — 25€  
+- Pack 12 Goudale 25cl — 25€  
+- Pack 12 Sant Erwann 25cl — 28€  
+
+##### 🍷 VIN
+- Vin blanc 70cl  
+- Vin rosé 70cl  
+- Vin rouge 70cl  
+
+---
+
+### 🍫 SNACKS
+#### Salé
+- Chips Breizh — 5€  
+- Pringles — 5€  
+- Curly — 5€  
+- Monster Munch — 5€  
+- Saucisson sec — 8€  
+
+#### Sucré
+- Maltesers Billes chocolatées — 7€  
+- M&Ms — 7€  
+- Dragibus Haribo — 5€  
+- Kinder Bueno Chocolat au lait x2 — 4€  
+
+---
+
+### 🧰 ACCESSOIRES ET INDISPENSABLES
+- Préservatif **x3** — 6€  
+- Briquet — 3€  
+- Jeu de cartes — 5€  
+- Lunettes — 5€  
+- Éthylotest — 3€  
+- T-shirt SoiréeXpress — 10€  
+
+⚠️ Tous les articles précédents non mentionnés dans ce prompt doivent être **supprimés**.
+
+---
+
+### 🖼️ IMAGES PRODUITS
+⚡ Important :
+- Tu ne peux ajouter que **20 photos pour le moment**.  
+- Utilise les **nouvelles images en pièce jointe** pour remplacer les anciennes correspondantes.  
+- Pour les articles **sans nouvelle image**, garde l’ancienne photo existante.  
+- Si l’article n’a **aucune image disponible**, mets **une image blanche neutre** (fond clair uniforme).  
+- Je t’enverrai les photos manquantes plus tard pour les remplacer.  
+- Les noms de fichiers doivent correspondre aux produits pour faciliter l’association automatique.
+
+---
+
+### 🧩 ICÔNE DU SITE
+Ajouter le **logo .ico** comme favicon (icône d’onglet navigateur).  
+
+---
+
+### 📄 CONDITIONS GÉNÉRALES D’UTILISATION
+Ajouter en bas de page un lien vers une section "📝 Conditions Générales d’Utilisation"  
+Inclure le texte complet fourni (version du 3 novembre 2025).  
+
+---
+
+### 🔒 POLITIQUE DE CONFIDENTIALITÉ
+Sous les CGU, ajouter un lien "🔒 Politique de Confidentialité"  
+Inclure le texte complet fourni (version du 3 novembre 2025).  
+
+---
+
+### ⚠️ MESSAGE EN BAS DE PAGE
+À côté des CGU et de la Politique de Confidentialité, afficher :
+> Des éthylotests sont disponibles à la vente sur le site ou sur demande.
+
+---
+
+### ✅ TECHNIQUE
+- Nettoyer tout le contenu obsolète.
+- Garder la mise en page existante (structure et style).
+- S’assurer que tout le texte est bien lisible sur mobile.
+- Ajouter des espaces, titres clairs, et sections cohérentes.
+- Si le site est en React : chaque section doit être un composant clair (Menu, Softs, Snacks, Accessoires, CGU, etc.).
+- Ajouter le favicon dans `index.html` :
+  ```html
+  <link rel="icon" type="image/x-icon" href="/logo.ico">

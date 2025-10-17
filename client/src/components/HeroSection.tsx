@@ -32,7 +32,7 @@ export default function HeroSection() {
         
         <p className="text-lg md:text-xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto" data-testid="text-description">
           C'est votre service de livraison nocturne d'alcool, boissons et snacks à Lorient et alentours.
-          Disponible tous les soirs de 1h30 à 5h30 du matin, SoirExpress dépanne vos soirées, afters, anniversaires ou simples envies de dernière minute.
+          Disponible Lun-Mar de 22h à 5h et Mer-Dim de 1h à 5h, SoiréeXpress dépanne vos soirées, afters, anniversaires ou simples envies de dernière minute.
         </p>
         
         <Button 

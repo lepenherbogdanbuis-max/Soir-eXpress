@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 const rules = [
   "Service réservé aux personnes majeures (18+).",
-  "Livraison uniquement de 1h30 à 5h, dans la zone couverte.",
+  "Livraison : Lun-Mar de 22h à 5h, Mer-Dim de 1h à 5h, dans la zone couverte.",
   "Minimum de commande : 30 € TTC.",
   "Paiement sur place (espèces ou CB).",
   "SoiréeXpress se réserve le droit de refuser une commande (comportement inapproprié, zone hors périmètre, ou abus d'alcool).",

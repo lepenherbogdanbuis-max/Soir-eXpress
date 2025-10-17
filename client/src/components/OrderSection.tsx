@@ -63,7 +63,7 @@ export default function OrderSection() {
 
         <div className="text-center space-y-4">
           <p className="text-sm text-primary-foreground/70">
-            Minimum de commande : 30 € • Livraison de 1h30 à 5h
+            Minimum de commande : 30 € • Livraison Lun-Mar: 22h-5h | Mer-Dim: 1h-5h
           </p>
           
           <Card className="p-6 bg-[hsl(30,70%,93%)] max-w-2xl mx-auto" data-testid="card-delivery-info">

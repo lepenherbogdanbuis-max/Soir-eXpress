@@ -9,7 +9,7 @@ const infos = [
   {
     icon: Clock,
     label: "Horaires",
-    value: "1h30 à 5h du matin",
+    value: "Lun-Mar: 22h-5h | Mer-Dim: 1h-5h",
   },
   {
     icon: MapPin,

@@ -1,4 +1,6 @@
 import { SiInstagram, SiFacebook } from "react-icons/si";
+import { Link } from "wouter";
+import { AlertTriangle } from "lucide-react";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -76,7 +78,30 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="text-center pt-8 border-t border-[hsl(30,70%,93%)]/20">
+        <div className="text-center pt-8 border-t border-[hsl(30,70%,93%)]/20 space-y-3">
+          <div className="flex justify-center gap-4 text-sm">
+            <Link 
+              href="/cgu"
+              className="text-[hsl(30,70%,93%)]/70 hover:text-primary transition-colors"
+              data-testid="link-cgu"
+            >
+              CGU
+            </Link>
+            <span className="text-[hsl(30,70%,93%)]/30">•</span>
+            <Link 
+              href="/politique-de-confidentialite"
+              className="text-[hsl(30,70%,93%)]/70 hover:text-primary transition-colors"
+              data-testid="link-privacy"
+            >
+              Politique de confidentialité
+            </Link>
+          </div>
+          
+          <p className="text-[hsl(30,70%,93%)]/70 text-xs flex items-center justify-center gap-2">
+            <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>L'abus d'alcool est dangereux pour la santé. Ne conduisez pas après avoir consommé de l'alcool. Des éthylotests sont disponibles en pharmacie.</span>
+          </p>
+          
           <p className="text-[hsl(30,70%,93%)]/70 text-sm" data-testid="text-copyright">
             Copyright © 2025 SoiréeXpress
           </p>

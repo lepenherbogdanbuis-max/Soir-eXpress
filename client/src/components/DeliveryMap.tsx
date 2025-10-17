@@ -72,7 +72,8 @@ export default function DeliveryMap() {
             <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
             <h4 className="font-semibold text-foreground mb-2">Horaires</h4>
             <p className="text-muted-foreground text-sm">
-              1h30 - 5h00 du matin
+              Lun-Mar: 22h-5h<br />
+              Mer-Dim: 1h-5h
             </p>
           </Card>
 

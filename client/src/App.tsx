@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
+import CGU from "@/pages/CGU";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +15,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/cgu" component={CGU} />
+      <Route path="/politique-de-confidentialite" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );
