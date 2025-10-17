@@ -8,6 +8,17 @@ The application features a single-page design with a vibrant orange and beige co
 
 ## Recent Changes (October 2025)
 
+### Latest Updates (October 17, 2025)
+- **Variable delivery hours implemented**: Service now operates Mon-Tue: 22h-5h, Wed-Sun: 1h-5h (updated across all components)
+- **Site title updated**: Changed to "SoiréeXpress" with proper accent in HTML title and all references
+- **Product catalog restructured**: Implemented nested category system with Spiritueux/Vin/Bière for alcohol, Salé/Sucré for snacks
+- **New product images**: Integrated 16+ new product images with updated product lineup
+- **Cocktail recipes updated**: Replaced Virgin Mojito with Citrus Fizz Maison recipe in About page
+- **Legal pages added**: Created CGU (Conditions Générales d'Utilisation) and Privacy Policy pages with proper legal content
+- **Footer enhanced**: Added links to legal pages, safety messaging with AlertTriangle icon about alcohol consumption and breathalyzers
+- **Emoji cleanup**: Removed all new emojis from UI, using lucide-react icons instead per design guidelines
+
+### Previous Updates
 - **WhatsApp number updated**: Changed from 33757911933 to 0766458205 (international: 33766458205)
 - **Google Maps removed**: Address verification feature removed, simplified to direct text input
 - **Delivery zone redesigned**: Replaced Google Maps visual with static display showing 25km radius, served cities list, and service info cards
