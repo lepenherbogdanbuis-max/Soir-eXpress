@@ -9,10 +9,21 @@ The application features a single-page design with a vibrant orange and beige co
 ## Recent Changes (October 2025)
 
 ### Latest Updates (October 17, 2025)
+- **Footer navigation fixed**: Implemented robust retry mechanism for cross-page navigation (CGU/Privacy Policy → home sections)
+  - Uses useRef to store pending scroll targets and useEffect to watch location changes
+  - Retries up to 10 times with 50ms delays to ensure target elements exist before scrolling
+  - No memory leaks or lingering timeouts
+- **Safety message consistency**: Updated all references from "éthylotests disponibles en pharmacie" to "disponibles sur notre site"
+  - Updated in Footer component
+  - Updated in CGU page (section 7 Responsabilité)
+- **Product images integrated**: Added 10 new product images with sanitized filenames
+  - Jack Daniel's 70cl, Jack Daniel's Miel 70cl
+  - Gin 70cl, Jägermeister 70cl, Havana Club ambré 70cl
+  - Chips Breizh, Curly, Dragibus Haribo
+  - Briquet, Éthylotest
 - **Variable delivery hours implemented**: Service now operates Mon-Tue: 22h-5h, Wed-Sun: 1h-5h (updated across all components)
 - **Site title updated**: Changed to "SoiréeXpress" with proper accent in HTML title and all references
 - **Product catalog restructured**: Implemented nested category system with Spiritueux/Vin/Bière for alcohol, Salé/Sucré for snacks
-- **New product images**: Integrated 16+ new product images with updated product lineup
 - **Cocktail recipes updated**: Replaced Virgin Mojito with Citrus Fizz Maison recipe in About page
 - **Legal pages added**: Created CGU (Conditions Générales d'Utilisation) and Privacy Policy pages with proper legal content
 - **Footer enhanced**: Added links to legal pages, safety messaging with AlertTriangle icon about alcohol consumption and breathalyzers
