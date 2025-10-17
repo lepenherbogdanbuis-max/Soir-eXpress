@@ -76,6 +76,9 @@ export default function OrderSection() {
             <p className="text-sm font-medium text-foreground mt-2">
               📞 Le livreur vous appellera lorsqu'il sera arrivé.
             </p>
+            <p className="text-sm font-medium text-foreground mt-2">
+              💳 Le client paye sa commande sur place, lors de la livraison, en espèces ou par carte bancaire.
+            </p>
           </Card>
         </div>
       </div>

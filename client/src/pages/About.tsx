@@ -45,7 +45,7 @@ const cocktails = [
     tip: "Simple, fort, sucré, parfait pour les soirées qui bougent."
   },
   {
-    name: "Piña Colada Maison",
+    name: "Piña Colada",
     subtitle: "Version tropicale facile",
     ingredients: [
       "4 cl de rhum blanc",

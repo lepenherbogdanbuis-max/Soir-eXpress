@@ -35,6 +35,7 @@ import curlyImg from "@assets/curly.png";
 import dragibusImg from "@assets/dragibus-haribo.png";
 import lighterImg from "@assets/briquet.png";
 import ethylotestImg from "@assets/ethylotest.png";
+import baileysImg from "@assets/baileys-70cl.png";
 
 // Nouvelles images des produits
 const desperadosPackImg = "/products/desperados-pack-12.png";
@@ -77,7 +78,7 @@ const products = {
     // Liqueurs
     { name: "Ricard 70cl", price: "38 €", image: ricardImg },
     { name: "Get 27 70cl", price: "35 €", image: get27Img },
-    { name: "Baileys 70cl", price: "35 €", image: placeholderImg },
+    { name: "Baileys 70cl", price: "35 €", image: baileysImg },
     { name: "Jägermeister 70cl", price: "40 €", image: jagermeisterImg },
   ],
   biere: [
@@ -130,7 +131,16 @@ const products = {
     { name: "Jeu de cartes", price: "5 €", image: cartesImg },
     { name: "Lunettes", price: "5 €", image: lunettesImg },
     { name: "Éthylotest", price: "3 €", image: ethylotestImg },
-    { name: "T-shirt SoiréeXpress", price: "10 €", image: tshirtImg },
+    { 
+      name: "T-shirt SoiréeXpress", 
+      price: "10 €", 
+      isCarousel: true,
+      variants: [
+        { name: "Taille S", image: tshirtImg },
+        { name: "Taille M", image: tshirtImg },
+        { name: "Taille L", image: tshirtImg },
+      ]
+    },
   ],
 };
 
