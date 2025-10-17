@@ -9,6 +9,10 @@ The application features a single-page design with a vibrant orange and beige co
 ## Recent Changes (October 2025)
 
 ### Latest Updates (October 17, 2025)
+- **T-shirt size selection added**: T-shirt SoiréeXpress now has size variants (S, M, L) using carousel system with navigation buttons
+- **Baileys image integrated**: Added Baileys 70cl product image to replace placeholder in Spiritueux category
+- **Payment information added**: Added payment details in "Comment commander" section - "Le client paye sa commande sur place, lors de la livraison, en espèces ou par carte bancaire"
+- **Piña Colada renamed**: Removed "Maison" from cocktail name in About page (now "Piña Colada")
 - **Footer navigation fixed**: Implemented robust retry mechanism for cross-page navigation (CGU/Privacy Policy → home sections)
   - Uses useRef to store pending scroll targets and useEffect to watch location changes
   - Retries up to 10 times with 50ms delays to ensure target elements exist before scrolling
@@ -16,9 +20,10 @@ The application features a single-page design with a vibrant orange and beige co
 - **Safety message consistency**: Updated all references from "éthylotests disponibles en pharmacie" to "disponibles sur notre site"
   - Updated in Footer component
   - Updated in CGU page (section 7 Responsabilité)
-- **Product images integrated**: Added 10 new product images with sanitized filenames
+- **Product images integrated**: Added 11 new product images with sanitized filenames
   - Jack Daniel's 70cl, Jack Daniel's Miel 70cl
   - Gin 70cl, Jägermeister 70cl, Havana Club ambré 70cl
+  - Baileys 70cl
   - Chips Breizh, Curly, Dragibus Haribo
   - Briquet, Éthylotest
 - **Variable delivery hours implemented**: Service now operates Mon-Tue: 22h-5h, Wed-Sun: 1h-5h (updated across all components)
