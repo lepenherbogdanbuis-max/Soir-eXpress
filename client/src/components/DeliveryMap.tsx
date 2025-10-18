@@ -68,28 +68,11 @@ export default function DeliveryMap() {
 
         {/* Informations importantes */}
         <div className="grid md:grid-cols-3 gap-6">
-          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-hours">
-            <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-            <h4 className="font-semibold text-foreground mb-2">Horaires</h4>
-            <p className="text-muted-foreground text-sm">
-              Lun-Mar: 22h-5h<br />
-              Mer-Dim: 1h-5h
-            </p>
-          </Card>
-
           <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-minimum">
             <Euro className="w-8 h-8 text-primary mx-auto mb-3" />
             <h4 className="font-semibold text-foreground mb-2">Commande minimum</h4>
             <p className="text-muted-foreground text-sm">
               30 € minimum
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-delivery">
-            <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-            <h4 className="font-semibold text-foreground mb-2">Livraison gratuite</h4>
-            <p className="text-muted-foreground text-sm">
-              0 frais de livraison
             </p>
           </Card>
         </div>
