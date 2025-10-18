@@ -8,7 +8,20 @@ The application features a single-page design with a vibrant orange and beige co
 
 ## Recent Changes (October 2025)
 
-### Latest Updates (October 17, 2025)
+### Latest Updates (October 18, 2025)
+- **Age verification modal implemented**: Mandatory 18+ age gate displayed on first visit with localStorage persistence
+  - "Êtes-vous majeur ? (18+)" question with "Oui" and "Non" buttons
+  - "Non" button shows lockout screen: "L'accès au site est réservé aux personnes majeures"
+  - "Oui" button saves choice and grants access
+  - Modal cannot be dismissed without answering
+- **Key info section added**: Prominent section on homepage (after Hero) highlighting:
+  - Free delivery: "LIVRAISON GRATUITE - Vous ne payez QUE vos produits"
+  - Customer service contact: "UNE QUESTION SUR VOTRE COMMANDE ? 07 66 45 82 05"
+  - Payment information: "Paiement sécurisé sur place"
+  - Gradient Card design with Truck, Phone, and CreditCard icons
+- **Legal pages scroll fix**: CGU and Privacy Policy pages now automatically scroll to top on mount
+
+### Previous Updates (October 17, 2025)
 - **T-shirt size selection added**: T-shirt SoiréeXpress now has size variants (S, M, L) using carousel system with navigation buttons
 - **Baileys image integrated**: Added Baileys 70cl product image to replace placeholder in Spiritueux category
 - **Payment information added**: Added payment details in "Comment commander" section - "Le client paye sa commande sur place, lors de la livraison, en espèces ou par carte bancaire"
