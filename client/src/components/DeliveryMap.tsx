@@ -65,17 +65,6 @@ export default function DeliveryMap() {
             </p>
           </Card>
         </div>
-
-        {/* Informations importantes */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="p-6 text-center hover-elevate transition-all" data-testid="info-minimum">
-            <Euro className="w-8 h-8 text-primary mx-auto mb-3" />
-            <h4 className="font-semibold text-foreground mb-2">Commande minimum</h4>
-            <p className="text-muted-foreground text-sm">
-              30 € minimum
-            </p>
-          </Card>
-        </div>
       </div>
     </section>
   );
