@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import KeyInfoSection from "@/components/KeyInfoSection";
 import PracticalInfo from "@/components/PracticalInfo";
 import DeliveryMap from "@/components/DeliveryMap";
 import OrderSection from "@/components/OrderSection";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <KeyInfoSection />
       <PracticalInfo />
       <DeliveryMap />
       <OrderSection />

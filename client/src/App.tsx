@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
+import AgeVerificationModal from "@/components/AgeVerificationModal";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import CGU from "@/pages/CGU";
@@ -27,6 +28,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <CartProvider>
+          <AgeVerificationModal />
           <Toaster />
           <Router />
         </CartProvider>
